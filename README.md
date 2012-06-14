@@ -22,35 +22,35 @@ Download the .scss file then add or import it to your .scss file.
 
     @include remixin(background-clip, border-box);
 
-
+<br />
 ####background-size
 **Usage:** `(background-size, [<length> | <percentage> | auto ]{1,2} | cover | contain [, [ <length> | <percentage> | auto ]{1,2} | cover | contain]*)`. 
 **Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
 
     @include remixin(background-size, 20px 20px);
 
-
+<br />
 ####border-radius
 **Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. 
 **Support:** Chrome 4+, Firefox 4+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
 
     @include remixin(border-radius, 20px);
 
-
+<br />
 ####box-shadow
 **Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`. 
 **Support:** Chrome 1+, Firefox 3.5+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
 
     @include remixin(box-shadow, 20px 20px 20px #f00);
 
-
+<br />
 ####box-sizing
 **Usage:** `(box-sizing, content-box | border-box | inherit)`. 
 **Support:** Chrome 1+, Firefox 1+, IE 8+, Safari 3+.
 
     @include remixin(box-sizing, content-box);
 
-
+<br />
 ####font-face
 **Usage:** `(font-face, <font> | style || weight)`. 
 **Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+. 
@@ -60,21 +60,21 @@ Download the .scss file then add or import it to your .scss file.
     @include remixin('font-face', Consolas normal);
     @include remixin('font-face', Consolas normal 200);
 
-
+<br />
 ####opacity
 **Usage:** `(opacity, <alphavalue> | inherit)`. 
 **Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
     @include remixin(opacity, 0.2);
 
-
+<br />
 ####user-select
 **Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`. 
 **Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
     @include remixin(user-select, none);
 
-
+<br />
 ####::selection
 **Usage:** `(::selection, background || color)`. 
 **Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
