@@ -1,3 +1,5 @@
+$fontPath: '';  //  font path for the font-face.
+
 @mixin remixin($property, $value, $moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true){
   @if $property == 'background-clip' or
       $property == 'background-size' or
@@ -5,6 +7,7 @@
       $property == 'box-shadow' or
       $property == 'box-sizing' or
       $property == 'font-face' or
+      $property == 'linear-gradient' or
       $property == 'opacity' or
       $property == 'selection' or
       $property == 'user-select'{
@@ -51,9 +54,9 @@
           font-style: normal;
           font-weight: normal;
           @if $ms{
-            src: url($value +'.eot');
+            src: url($fontPath + $value +'.eot');
           } 
-          src: local('☺'), url($value + '.ttf') format('truetype'), url($value + '.woff') format('woff'), url($value + '.svg') format('svg');
+          src: local('☺'), url($fontPath + $value + '.ttf') format('truetype'), url($fontPath + $value + '.woff') format('woff'), url($fontPath + $value + '.svg') format('svg');
         }
       }
       @if length($value) == 2{
@@ -66,9 +69,9 @@
             font-style: nth($value, 2);
           }
           @if $ms{
-            src: url(nth($value, 1) +'.eot');
+            src: url(nth($fontPath + $value, 1) +'.eot');
            } 
-           src: local('☺'), url(nth($value, 1) + '.ttf') format('truetype'), url(nth($value, 1) + '.woff') format('woff'), url(nth($value, 1) + '.svg') format('svg');
+           src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
         }
       } 
       @if length($value) == 3{
@@ -85,10 +88,20 @@
             font-style: nth($value, 3);
           }
           @if $ms{
-            src: url(nth($value, 1) +'.eot');
+            src: url(nth($fontPath + $value, 1) +'.eot');
           } 
-          src: local('☺'), url(nth($value, 1) + '.ttf') format('truetype'), url(nth($value, 1) + '.woff') format('woff'), url(nth($value, 1) + '.svg') format('svg');
+          src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
         }
+      }
+    } @else if $property == 'linear-gradient'{  //  gradient
+      @if $moz{
+          background-image: -moz-linear-gradient($value);
+      }
+      @if $ms {
+        background-image: -ms-linear-gradient($value);
+      }
+      @if $webkit{
+          background-image: -webkit-linear-gradient($value);
       }
     } @else if $property == 'opacity'{  //  opacity
       #{$property}: $value;
@@ -136,4 +149,8 @@
   } @else{
     @warn "Unsupported CSS property. :(";
   }
+}
+
+#tilde{
+  @include remixin(linear-gradient, top #efa313 #333);  
 }
