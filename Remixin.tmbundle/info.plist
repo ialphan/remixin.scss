@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Remixin</string>
+	<key>ordering</key>
+	<array>
+		<string>F26176B5-CE94-4D32-A07F-65D4FEF29CF6</string>
+	</array>
+	<key>uuid</key>
+	<string>5EFEB427-7453-48C1-ACAF-01FFB2ABF4CC</string>
+</dict>
+</plist>
