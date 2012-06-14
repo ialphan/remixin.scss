@@ -4,51 +4,57 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 <br /><br />
 
 ##Installation
-***
+
 Download the .scss file then add or import it to your .scss file.
 
     git clone http://git@github.com:ialphan/remixin.scss.git
 <br />
 
 ##Usage
-***
 
 	remixin(property, value);
 	
 **Note:** Property has to be the first argument. Value can be a list of parameters separated by space (not comma). See individual properties below for implementation.
 
 ####background-clip
-**Usage:** `(background-clip, border-box | padding-box | content-box [, border-box | padding-box | content-box]*)`. **Support:** Chrome 4+, Firefox 3.5+, IE9+, Safari 3+.
+**Usage:** `(background-clip, border-box | padding-box | content-box [, border-box | padding-box | content-box]*)`. 
+**Support:** Chrome 4+, Firefox 3.5+, IE9+, Safari 3+.
 
     @include remixin(background-clip, border-box);
 
 
 ####background-size
-**Usage:** `(background-size, [<length> | <percentage> | auto ]{1,2} | cover | contain [, [ <length> | <percentage> | auto ]{1,2} | cover | contain]*)`. **Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
+**Usage:** `(background-size, [<length> | <percentage> | auto ]{1,2} | cover | contain [, [ <length> | <percentage> | auto ]{1,2} | cover | contain]*)`. 
+**Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
 
     @include remixin(background-size, 20px 20px);
 
 
 ####border-radius
-**Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. **Support:** Chrome 4+, Firefox 4+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
+**Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. 
+**Support:** Chrome 4+, Firefox 4+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
 
     @include remixin(border-radius, 20px);
 
 
 ####box-shadow
-**Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`. **Support:** Chrome 1+, Firefox 3.5+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
+**Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`. 
+**Support:** Chrome 1+, Firefox 3.5+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
 
     @include remixin(box-shadow, 20px 20px 20px #f00);
 
 
 ####box-sizing
-**Usage:** `(box-sizing, content-box | border-box | inherit)`. **Support:** Chrome 1+, Firefox 1+, IE 8+, Safari 3+.
+**Usage:** `(box-sizing, content-box | border-box | inherit)`. 
+**Support:** Chrome 1+, Firefox 1+, IE 8+, Safari 3+.
 
     @include remixin(box-sizing, content-box);
 
 
 ####font-face
-**Usage:** `(font-face, <font> | style || weight)`. **Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+. **Note:** Font style or weight does not have to be in order.
+**Usage:** `(font-face, <font> | style || weight)`. 
+**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+. 
+**Note:** Font style or weight does not have to be in order.
 
     @include remixin('font-face', Consolas);
     @include remixin('font-face', Consolas normal);
@@ -56,25 +62,27 @@ Download the .scss file then add or import it to your .scss file.
 
 
 ####opacity
-**Usage:** `(opacity, <alphavalue> | inherit)`. **Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
+**Usage:** `(opacity, <alphavalue> | inherit)`. 
+**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
     @include remixin(opacity, 0.2);
 
 
 ####user-select
-**Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`. **Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
+**Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`. 
+**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
     @include remixin(user-select, none);
 
 
 ####::selection
-**Usage:** `(::selection, background || color)`. **Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
+**Usage:** `(::selection, background || color)`. 
+**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
 
     @include remixin(::selection, #f00);
 <br />
 
 ##Browser Support
-***
 * Chrome (-webkit) as $webkit.
 * Firefox (-moz) as $moz.
 * Internet Explorer (-ms) as $ms (IE 10), $ms9 (IE 9), $ms8 (IE 8).
@@ -84,7 +92,6 @@ See individual properties above for implementation.
 <br /><br />
 
 ##Advanced Usage (suggested)
-***
 In the remixin( ), enable/disable vendors for your needs. Defaults are: 
 
 	$moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true
@@ -117,7 +124,6 @@ This will not generate any -moz nor -ms properties.
 <br /><br />
 
 ##History
-***
 **v0.1 - 2012-06-14**
 
 Added properties:
