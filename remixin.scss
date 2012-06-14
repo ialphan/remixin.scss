@@ -4,19 +4,34 @@ $fontPath: '';  //  font path for the font-face.
   @if $property == 'background-clip' or
       $property == 'background-size' or
       $property == 'border-radius' or  
+      $property == 'box-direction' or
       $property == 'box-shadow' or
       $property == 'box-sizing' or
       $property == 'font-face' or
+      $property == 'hyphens' or
       $property == 'linear-gradient' or
       $property == 'opacity' or
       $property == 'selection' or
+      $property == 'transform' or
+      $property == 'transition' or
       $property == 'user-select'{
-    @if $property == 'background-clip' or $property == 'background-size'{ //  background-clip, background-size
+    @if $property == 'background-clip' or $property == 'background-size' or $property == 'transition'{ //  background-clip, background-size, transition
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
       }
       @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    } @else if $property == 'box-direction'{ //  box-direction
+      display:box;
+      #{$property}: $value;
+      @if $moz{
+        display:-moz-box;
+        -moz-#{$property}: $value;
+      }
+      @if $webkit{
+        display:-webkit-box;
         -webkit-#{$property}: $value;
       }
     } @else if $property == 'border-radius'{  //  border-radius
@@ -26,7 +41,7 @@ $fontPath: '';  //  font path for the font-face.
           //  Use https://github.com/lojjic/PIE's PIE.htc.
         }
       }
-    } @else if $property == 'box-shadow'{ //  box-shadow
+    }@else if $property == 'box-shadow'{ //  box-shadow
       #{$property}: $value;
       @if $ms{
         @if $ms8{
@@ -93,6 +108,14 @@ $fontPath: '';  //  font path for the font-face.
           src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
         }
       }
+    } @else if $property == 'hyphens'{  //  hyphens
+      #{$property}: $value;
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $webkit{
+          -webkit-#{$property}: $value;
+      }
     } @else if $property == 'linear-gradient'{  //  gradient
       @if $moz{
           background-image: -moz-linear-gradient($value);
@@ -133,6 +156,24 @@ $fontPath: '';  //  font path for the font-face.
              color: nth($value, 2);
            }
          }
+         @if $webkit{
+           ::-moz-selection {
+             background: nth($value, 1);
+           }
+         }
+      }
+    } @else if $property == 'transform'{  //  transform
+      #{$property}: $value;
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $ms{
+        @if $ms9{
+          -ms-#{$property}: $value;
+        }
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
       }
     } @else if $property == 'user-select'{  //  user-select
       #{$property}: $value;
@@ -151,6 +192,5 @@ $fontPath: '';  //  font path for the font-face.
   }
 }
 
-#tilde{
-  @include remixin(linear-gradient, top #efa313 #333);  
-}
+
+@include remixin(selection, #efa313)
