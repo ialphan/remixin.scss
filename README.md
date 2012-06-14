@@ -161,12 +161,18 @@ Multiple vendors can be passed as arguments separated by commas:
 This will not generate any -moz nor -ms properties.
 <br /><br />
 
+##TextMate Bundle (snippet).
+In order to use it, the SCSS file extension must be selected in TextMate. Type *remixin*	then press tab, it will generate
+	
+	@include remixin(, ); 
+
+<br /><br />
+
 ##License
 See the LICENSE file.
 <br /><br />
 
 ##History
-
 **v0.1.1 - 2012-06-14**
 
   * Updated incorrect usage for ::selection property in the README.md.
@@ -178,6 +184,7 @@ See the LICENSE file.
   	* linear-gradient
   	* transform
   	* transition properties
+  *	Added TextMate bundle.
 
 ***
 
