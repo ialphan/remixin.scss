@@ -1,0 +1,139 @@
+@mixin remixin($property, $value, $moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true){
+  @if $property == 'background-clip' or
+      $property == 'background-size' or
+      $property == 'border-radius' or  
+      $property == 'box-shadow' or
+      $property == 'box-sizing' or
+      $property == 'font-face' or
+      $property == 'opacity' or
+      $property == 'selection' or
+      $property == 'user-select'{
+    @if $property == 'background-clip' or $property == 'background-size'{ //  background-clip, background-size
+      #{$property}: $value;
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    } @else if $property == 'border-radius'{  //  border-radius
+      #{$property}: $value;
+      @if $ms{
+        @if $ms8{
+          //  Use https://github.com/lojjic/PIE's PIE.htc.
+        }
+      }
+    } @else if $property == 'box-shadow'{ //  box-shadow
+      #{$property}: $value;
+      @if $ms{
+        @if $ms8{
+          //  Use https://github.com/lojjic/PIE's PIE.htc.
+        }
+      }
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    } @else if $property == 'box-sizing'{ //  box-sizing
+      #{$property}: $value;
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    } @else if $property == 'font-face'{  //  font-face
+      @if length($value) == 1{
+        @font-face{
+          font-family: $value;
+          font-style: normal;
+          font-weight: normal;
+          @if $ms{
+            src: url($value +'.eot');
+          } 
+          src: local('☺'), url($value + '.ttf') format('truetype'), url($value + '.woff') format('woff'), url($value + '.svg') format('svg');
+        }
+      }
+      @if length($value) == 2{
+        @font-face{
+          font-family: nth($value, 1);
+          @if type-of(nth($value, 2)) == number{
+            font-weight: nth($value, 2);
+          }
+          @else if type-of(nth($value, 2)) == string{
+            font-style: nth($value, 2);
+          }
+          @if $ms{
+            src: url(nth($value, 1) +'.eot');
+           } 
+           src: local('☺'), url(nth($value, 1) + '.ttf') format('truetype'), url(nth($value, 1) + '.woff') format('woff'), url(nth($value, 1) + '.svg') format('svg');
+        }
+      } 
+      @if length($value) == 3{
+        @font-face{
+          font-family: nth($value, 1);
+          @if type-of(nth($value, 2)) == number{
+            font-weight: nth($value, 2);
+          } @else if type-of(nth($value, 2)) == string{
+            font-style: nth($value, 2);
+          }
+          @if type-of(nth($value, 3)) == number{
+            font-weight: nth($value, 3);
+          } @else if type-of(nth($value, 3)) == string{
+            font-style: nth($value, 3);
+          }
+          @if $ms{
+            src: url(nth($value, 1) +'.eot');
+          } 
+          src: local('☺'), url(nth($value, 1) + '.ttf') format('truetype'), url(nth($value, 1) + '.woff') format('woff'), url(nth($value, 1) + '.svg') format('svg');
+        }
+      }
+    } @else if $property == 'opacity'{  //  opacity
+      #{$property}: $value;
+      @if $ms{
+        @if $ms8{
+          filter: alpha(opacity=#{$value * 100});
+        }
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
+        zoom:1;
+      }
+    } @else if $property == 'selection'{  //  selection
+      @if length($value) == 1{
+        ::selection {
+           background: nth($value, 1);
+         }
+         @if $moz{
+           ::-moz-selection {
+             background: nth($value, 1);
+           }
+         }
+      } @else if length($value) == 2{
+        ::selection {
+           background: nth($value, 1);
+           color: nth($value, 2);
+         }
+         @if $moz{
+           ::-moz-selection {
+             background: nth($value, 1);
+             color: nth($value, 2);
+           }
+         }
+      }
+    } @else if $property == 'user-select'{  //  user-select
+      #{$property}: $value;
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $ms{
+        -ms-#{$property}: $value;
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    }
+  } @else{
+    @warn "Unsupported CSS property. :(";
+  }
+}
