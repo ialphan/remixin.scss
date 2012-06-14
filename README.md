@@ -3,12 +3,6 @@
 remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments).
 <br /><br />
 
-##Installation
-
-Download the .scss file then add or import it to your .scss file.
-
-    git clone http://git@github.com:ialphan/remixin.scss.git
-<br />
 
 ##Usage
 Call remixin with the property and value(s).
