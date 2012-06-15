@@ -36,7 +36,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />
 ####border-radius
 **Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. 
-<br />**Support:** Chrome 4+, Firefox 4+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
+<br />**Support:** Chrome 4+, Firefox 4+, IE9+ (IE8 with CSS3Pie), Safari 3+.
 
 	Ex. @include remixin(border-radius, 20px);
 
@@ -50,7 +50,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />
 ####box-shadow
 **Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`.
-<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+ (Use https://github.com/lojjic/PIE's solution for IE8), Safari 3+.
+<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+ (IE8 with CSS3Pie), Safari 3+.
 
 	Ex. @include remixin(box-shadow, 20px 20px 20px #f00);
  
@@ -177,6 +177,13 @@ See the LICENSE file.
 
 
 ##History
+
+**v0.1.2 - 2012-06-15**
+ 
+  * Added CSS3Pie for IE 8 fallbacks.
+
+***
+
 **v0.1.1 - 2012-06-14**
  
   * Updated incorrect usage for ::selection property in the README.md.
