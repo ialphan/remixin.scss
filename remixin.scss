@@ -1,7 +1,8 @@
 $fontPath: '';  //  font path for the font-face.
 
 @mixin remixin($property, $value, $moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true){
-  @if $property == 'background-clip' or
+  @if $property == 'animation' or
+      $property == 'background-clip' or
       $property == 'background-size' or
       $property == 'border-radius' or  
       $property == 'box-direction' or
@@ -11,10 +12,10 @@ $fontPath: '';  //  font path for the font-face.
       $property == 'hyphens' or
       $property == 'linear-gradient' or
       $property == 'opacity' or
-      $property == 'selection' or
       $property == 'transform' or
       $property == 'transition' or
-      $property == 'user-select'{
+      $property == 'user-select' or
+      $property == 'selection'{
     @if $property == 'background-clip' or $property == 'background-size' or $property == 'transition'{ //  background-clip, background-size, transition
       #{$property}: $value;
       @if $moz{
@@ -175,7 +176,7 @@ $fontPath: '';  //  font path for the font-face.
       @if $webkit{
         -webkit-#{$property}: $value;
       }
-    } @else if $property == 'user-select'{  //  user-select
+    } @else if $property == 'animation' or $property == 'user-select'{  //  animation, user-select
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
