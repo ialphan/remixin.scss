@@ -80,7 +80,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />
 ####linear-gradient
 **Usage:** `(linear-gradient, ([<point> || <angle>,]? <stop>, <stop> [, <stop>]))`:
-<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
+<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+ (compatible down to IE 8), Safari 4+.
  
     Ex. @include remixin(linear-gradient, left #f00 #00f);
 
@@ -90,6 +90,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
     Ex. @include remixin(opacity, 0.2);
+
+<br />
+####radial-gradient
+**Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
+<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
+ 
+    Ex. @include remixin(radial-gradient, center 45deg, circle closest-side, #f00 0%, #00f 100%);
 
 <br />
 ####transform
@@ -181,6 +188,7 @@ See the LICENSE file.
 **v0.1.2 - 2012-06-15**
  
   * Added CSS3Pie for IE 8 fallbacks.
+  * Added radial-gradient (gradient is now linear-gradient).
 
 ***
 
