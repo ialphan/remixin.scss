@@ -1,10 +1,11 @@
-$fontPath: '';  //  font path for the font-face.
+$fontPath: nil !default;  //  font path for the font-face.
+$piePath: nil !default;  //  pie path for IE8 fallbacks.
 
-@mixin remixin($property, $value, $moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true){
+@mixin remixin($property, $value, $moz: true, $ms8: true, $ms9:true, $ms: true, $webkit: true){
   @if $property == 'animation' or
       $property == 'background-clip' or
       $property == 'background-size' or
-      $property == 'border-radius' or  
+      $property == 'border-radius' or
       $property == 'box-direction' or
       $property == 'box-shadow' or
       $property == 'box-sizing' or
@@ -39,14 +40,19 @@ $fontPath: '';  //  font path for the font-face.
       #{$property}: $value;
       @if $ms{
         @if $ms8{
-          //  Use https://github.com/lojjic/PIE's PIE.htc.
+          @if $piePath != nil{
+            behavior: url($piePath + 'PIE.htc');
+          }
         }
       }
-    }@else if $property == 'box-shadow'{ //  box-shadow
+    } @else if $property == 'box-shadow'{ //  box-shadow
       #{$property}: $value;
       @if $ms{
         @if $ms8{
-          //  Use https://github.com/lojjic/PIE's PIE.htc.
+          @if $piePath != nil{
+            behavior: url($piePath + 'PIE.htc');
+            -pie-background: linear-gradient($value);
+          }
         }
       }
       @if $moz{
@@ -64,49 +70,50 @@ $fontPath: '';  //  font path for the font-face.
         -webkit-#{$property}: $value;
       }
     } @else if $property == 'font-face'{  //  font-face
-      @if length($value) == 1{
-        @font-face{
-          font-family: $value;
-          font-style: normal;
-          font-weight: normal;
-          @if $ms{
-            src: url($fontPath + $value +'.eot');
-          } 
-          src: local('☺'), url($fontPath + $value + '.ttf') format('truetype'), url($fontPath + $value + '.woff') format('woff'), url($fontPath + $value + '.svg') format('svg');
+      @if $fontPath != nil{
+        @if length($value) == 1{
+          @font-face{
+            font-family: $value;
+            font-style: normal;
+            font-weight: normal;
+            @if $ms{
+              src: url($fontPath + $value +'.eot');
+            } 
+            src: local('☺'), url($fontPath + $value + '.ttf') format('truetype'), url($fontPath + $value + '.woff') format('woff'), url($fontPath + $value + '.svg') format('svg');
+          }
         }
-      }
-      @if length($value) == 2{
-        @font-face{
-          font-family: nth($value, 1);
-          @if type-of(nth($value, 2)) == number{
-            font-weight: nth($value, 2);
+        @if length($value) == 2{
+          @font-face{
+            font-family: nth($value, 1);
+            @if type-of(nth($value, 2)) == number{
+              font-weight: nth($value, 2);
+            } @else if type-of(nth($value, 2)) == string{
+              font-style: nth($value, 2);
+            }
+            @if $ms{
+              src: url(nth($fontPath + $value, 1) +'.eot');
+             } 
+             src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
           }
-          @else if type-of(nth($value, 2)) == string{
-            font-style: nth($value, 2);
+        } 
+        @if length($value) == 3{
+          @font-face{
+            font-family: nth($value, 1);
+            @if type-of(nth($value, 2)) == number{
+              font-weight: nth($value, 2);
+            } @else if type-of(nth($value, 2)) == string{
+              font-style: nth($value, 2);
+            }
+            @if type-of(nth($value, 3)) == number{
+              font-weight: nth($value, 3);
+            } @else if type-of(nth($value, 3)) == string{
+              font-style: nth($value, 3);
+            }
+            @if $ms{
+              src: url(nth($fontPath + $value, 1) +'.eot');
+            } 
+            src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
           }
-          @if $ms{
-            src: url(nth($fontPath + $value, 1) +'.eot');
-           } 
-           src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
-        }
-      } 
-      @if length($value) == 3{
-        @font-face{
-          font-family: nth($value, 1);
-          @if type-of(nth($value, 2)) == number{
-            font-weight: nth($value, 2);
-          } @else if type-of(nth($value, 2)) == string{
-            font-style: nth($value, 2);
-          }
-          @if type-of(nth($value, 3)) == number{
-            font-weight: nth($value, 3);
-          } @else if type-of(nth($value, 3)) == string{
-            font-style: nth($value, 3);
-          }
-          @if $ms{
-            src: url(nth($fontPath + $value, 1) +'.eot');
-          } 
-          src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
         }
       }
     } @else if $property == 'hyphens'{  //  hyphens
@@ -121,7 +128,7 @@ $fontPath: '';  //  font path for the font-face.
       @if $moz{
           background-image: -moz-linear-gradient($value);
       }
-      @if $ms {
+      @if $ms{
         background-image: -ms-linear-gradient($value);
       }
       @if $webkit{
@@ -138,28 +145,29 @@ $fontPath: '';  //  font path for the font-face.
       }
     } @else if $property == 'selection'{  //  selection
       @if length($value) == 1{
-        ::selection {
+        ::selection{
            background: nth($value, 1);
          }
          @if $moz{
-           ::-moz-selection {
+           ::-moz-selection{
              background: nth($value, 1);
            }
          }
       } @else if length($value) == 2{
-        ::selection {
+        ::selection{
            background: nth($value, 1);
            color: nth($value, 2);
          }
          @if $moz{
-           ::-moz-selection {
+           ::-moz-selection{
              background: nth($value, 1);
              color: nth($value, 2);
            }
          }
          @if $webkit{
-           ::-moz-selection {
+           ::-moz-selection{
              background: nth($value, 1);
+             color: nth($value, 2);
            }
          }
       }
