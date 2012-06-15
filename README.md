@@ -149,12 +149,12 @@ Decide on which vendor you don't need and then turn it off:
 <br />
 Then use them in your remixin:
 
-    @include remixin(font-face, $fontStyle $fontWidth, $ms: false);
+	Ex. @include remixin(font-face, $fontStyle $fontWidth, $ms: false);
 
 
 Multiple vendors can be passed as arguments separated by commas:
 
-      @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
+    Ex. @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
 
 This will not generate any -moz nor -ms properties.
 <br /><br />
