@@ -82,7 +82,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(linear-gradient, ([<point> || <angle>,]? <stop>, <stop> [, <stop>]))`:
 <br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
  
-    Ex. @include remixin(linear-gradient, left #f00 #00f));
+    Ex. @include remixin(linear-gradient, left #f00 #00f);
 
 <br />
 ####opacity
@@ -96,7 +96,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`. 
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
-    Ex. @include remixin(transform, rotate(200deg));
+    Ex. @include remixin(transform, rotate(200deg);
 
 <br />
 ####transition
