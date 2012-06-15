@@ -162,11 +162,10 @@ This will not generate any -moz nor -ms properties.
 <br /><br />
 
 ##TextMate Bundle (snippet).
-In order to use it, the SCSS file extension must be selected in TextMate. Type *remixin*	then press tab, it will generate
+The SCSS file extension must be selected in TextMate. Type *remixin*	then press tab, it will generate
 	
 	@include remixin(, ); 
-
-<br /><br />
+<br />
 
 ##License
 See the LICENSE file.
