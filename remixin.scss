@@ -13,7 +13,6 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       $property == 'hyphens' or
       $property == 'linear-gradient' or
       $property == 'opacity' or
-      $property == 'radial-gradient' or
       $property == 'transform' or
       $property == 'transition' or
       $property == 'user-select' or
@@ -148,16 +147,6 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
         }
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
         zoom:1;
-      }
-    } @else if $property == 'radial-gradient'{  //  radial-gradient
-      @if $moz{
-          background-image: -moz-radial-gradient($value);
-      }
-      @if $ms{
-        background-image: radial-gradient($value);
-      }
-      @if $webkit{
-          background-image: -webkit-radial-gradient($value);
       }
     } @else if $property == 'selection'{  //  selection
       @if length($value) == 1{
