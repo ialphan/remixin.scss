@@ -16,11 +16,12 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	hyphens
 	linear-gradient
 	opacity
-	radial-gradient	
+	perspective
+	radial-gradient
+ 	::selection
 	transform
 	transition
 	user-selec
- 	::selection
 
 
 ##Usage
@@ -111,11 +112,27 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
     Ex. @include remixin(opacity, 0.2);
 
 <br />
+####perspective
+**Usage:** `(perspective, none | <length>)`. 
+<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+<br />**Note:** Same as transform(perspective).
+
+    Ex. @include remixin(perspective, 200px);
+
+<br />
 ####radial-gradient (simple)
 **Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
 <br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
  
     Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
+
+<br />
+
+####::selection
+**Usage:** `(selection, background color)`. 
+<br />**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
+
+    Ex. @include remixin(selection, #f00);
 
 <br />
 ####transform
@@ -137,13 +154,6 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
     Ex. @include remixin(user-select, none);
-
-<br />
-####::selection
-**Usage:** `(selection, background color)`. 
-<br />**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
-
-    Ex. @include remixin(selection, #f00);
 
 <br />
 
@@ -203,6 +213,12 @@ See the LICENSE file.
 
 
 ##History
+
+**v0.1.23 - 2012-09-15**
+ 
+  * Added perspective property. Note that it's same as transform(perspective).
+
+***
 
 **v0.1.22 - 2012-09-15**
  
