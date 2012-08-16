@@ -227,7 +227,7 @@ See the LICENSE file.
  
   * Added perspective property. Note that it's same as transform(perspective).
   * Added demo.html and demo.css in demo directory. It demonstrates basic usage of remixin with box-shadow.
-  * Added border-image.
+  * Added border-image property.
 
 ***
 
