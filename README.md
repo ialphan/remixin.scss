@@ -8,6 +8,7 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	animation
 	background-clip
 	background-size
+	border-image
 	border-radius
 	box-direction
 	box-shadow
@@ -53,6 +54,14 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 	Ex. @include remixin(background-size, 20px 20px);
  
+<br />
+####border-image
+**Usage:** `(border-image, <border-image-source> || <border-image-slice> [ / <border-image-width> |
+/ <border-image-width>? / <border-image-outset> ]? || <border-image-repeat>)`. 
+<br />**Support:** Chrome 19+, Firefox 3.6+, Safari 5.1+.
+
+	Ex. @include remixin(border-image, url(borderImage.png) 20 20 round);
+
 <br />
 ####border-radius
 **Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. 
@@ -214,9 +223,11 @@ See the LICENSE file.
 
 ##History
 
-**v0.1.23 - 2012-09-15**
+**v0.1.23 - 2012-09-16**
  
   * Added perspective property. Note that it's same as transform(perspective).
+  * Added demo.html and demo.css in demo directory. It demonstrates basic usage of remixin with box-shadow.
+  * Added border-image.
 
 ***
 

@@ -1,0 +1,12 @@
+//  Import remixin.
+@import "../remixin";
+
+div{
+  background: #f00;
+  height: 200px;
+  margin: 100px auto 0;
+  width: 200px;
+
+  //  remixin for box-shadow.
+  @include remixin(box-shadow, 2px 2px 2px 2px #00f);
+}

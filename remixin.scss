@@ -5,6 +5,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
   @if $property == 'animation' or
       $property == 'background-clip' or
       $property == 'background-size' or
+      $property == 'border-image' or
       $property == 'border-radius' or
       $property == 'box-direction' or
       $property == 'box-shadow' or
@@ -19,7 +20,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       $property == 'transform' or
       $property == 'transition' or
       $property == 'user-select'{
-    @if $property == 'background-clip' or $property == 'background-size' or $property == 'perspective' or $property == 'transition'{ //  background-clip, background-size, perspective, transition
+    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, hyphens, perspective, transition
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
@@ -56,14 +57,6 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
           }
         }
       }
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-    } @else if $property == 'box-sizing'{ //  box-sizing
-      #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
       }
@@ -117,14 +110,6 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
           }
         }
       }
-    } @else if $property == 'hyphens'{  //  hyphens
-      #{$property}: $value;
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
     } @else if $property == 'linear-gradient'{  //  linear-gradient
       @if $moz{
           background-image: -moz-linear-gradient($value);
@@ -152,13 +137,13 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       }
     } @else if $property == 'radial-gradient'{  //  radial-gradient
       @if $moz{
-          background-image: -moz-radial-gradient($value);
+        background-image: -moz-radial-gradient($value);
       }
       @if $ms{
         background-image: radial-gradient($value);
       }
       @if $webkit{
-          background-image: -webkit-radial-gradient($value);
+        background-image: -webkit-radial-gradient($value);
       }
     } @else if $property == 'selection'{  //  selection
       @if length($value) == 1{
