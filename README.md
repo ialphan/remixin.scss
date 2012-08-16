@@ -92,6 +92,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
     Ex. @include remixin(opacity, 0.2);
 
 <br />
+####radial-gradient (simple)
+**Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
+<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
+ 
+    Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
+
+<br />
 ####transform
 **Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`. 
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
@@ -141,7 +148,7 @@ In the remixin() enable/disable browser vendors for your needs. Defaults are:
 If you are developing for Chrome/Safari set $webkit to true, for Firefox set $moz to true,
 for IE 10 but not IE8/9, set $ms8 and $ms9 to false and $ms to true.
  
-You can also target these when you are calling your remixin. Here is an example for applying border. Declare your variables:
+You can also target these when you are calling your remixin. Here is an example setting your fon-tface. Declare your variables:
  
     $fontStyle: normal;
     $fontWidth: 600;
@@ -177,6 +184,12 @@ See the LICENSE file.
 
 
 ##History
+
+**v0.1.22 - 2012-09-15**
+ 
+  * Added simple radial-gradient.
+
+***
 
 **v0.1.21 - 2012-06-19**
  
