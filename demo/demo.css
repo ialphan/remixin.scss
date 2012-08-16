@@ -3,6 +3,10 @@ div {
   height: 200px;
   margin: 100px auto 0;
   width: 200px;
+  /* 
+  
+    remixin for box-shadow.
+  */
   box-shadow: 2px 2px 2px 2px blue;
   -moz-box-shadow: 2px 2px 2px 2px blue;
   -webkit-box-shadow: 2px 2px 2px 2px blue;

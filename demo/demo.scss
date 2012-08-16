@@ -7,6 +7,9 @@ div{
   margin: 100px auto 0;
   width: 200px;
 
-  //  remixin for box-shadow.
+  /* 
+  
+    remixin for box-shadow.
+  */
   @include remixin(box-shadow, 2px 2px 2px 2px #00f);
 }
