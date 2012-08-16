@@ -4,6 +4,25 @@
 remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties.
 <br /><br />
 
+##Supported Properties
+	animation
+	background-clip
+	background-size
+	border-radius
+	box-direction
+	box-shadow
+	box-sizing
+	font-face
+	hyphens
+	linear-gradient
+	opacity
+	radial-gradient	
+	transform
+	transition
+	user-selec
+ 	::selection
+
+
 ##Usage
 Call remixin with the property and value(s). Browser vendor(s) are optional.
 
@@ -188,6 +207,8 @@ See the LICENSE file.
 **v0.1.22 - 2012-09-15**
  
   * Added simple radial-gradient.
+  * Added supported properties sections to the README.md.
+  * Fixed a typo in advanced-usage.
 
 ***
 
