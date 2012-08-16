@@ -167,7 +167,7 @@ In the remixin() enable/disable browser vendors for your needs. Defaults are:
 If you are developing for Chrome/Safari set $webkit to true, for Firefox set $moz to true,
 for IE 10 but not IE8/9, set $ms8 and $ms9 to false and $ms to true.
  
-You can also target these when you are calling your remixin. Here is an example setting your fon-tface. Declare your variables:
+You can also target these when you are calling your remixin. Here is an example setting your font-face. Declare your variables:
  
     $fontStyle: normal;
     $fontWidth: 600;
