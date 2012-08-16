@@ -226,7 +226,7 @@ See the LICENSE file.
 **v0.1.23 - 2012-09-16**
  
   * Added perspective property. Note that it's same as transform(perspective).
-  * Added demo.html and demo.css in demo directory. It demonstrates basic usage of remixin with box-shadow.
+  * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates basic usage of remixin with box-shadow.
   * Added border-image property.
 
 ***
