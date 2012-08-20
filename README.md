@@ -13,6 +13,9 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	box-direction
 	box-shadow
 	box-sizing
+	column-count
+	column-gap
+	column-rule		
 	font-face
 	hyphens
 	linear-gradient
@@ -71,7 +74,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 <br />
 ####box-direction
-**Usage:** `(box-direction, normal|reverse|inherit)`. 
+**Usage:** `(box-direction, normal | reverse | inherit)`. 
 <br />**Support:** Chrome 1+, Firefox 1+, Safari 2+.
 
 	Ex. @include remixin(box-direction, reverse);
@@ -91,13 +94,35 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 	Ex. @include remixin(box-sizing, content-box);
 
 <br />
+####column-count
+**Usage:** `(column-count, <integer> | auto)`.
+<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-count', 2);
+
+<br />
+####column-gap
+**Usage:** `(column-gap, <length> | normal)`.
+<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-gap', 20px);
+
+<br />
+####column-rule
+**Usage:** `(column-rule, <border-width> || <border-style> || <color>)`.
+<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-rule', solid 20px #f00);
+
+<br />
 ####font-face
 **Usage:** `(font-face, <font> | style || weight)`.
 <br />**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+.
 
-	Ex. @include remixin('font-face', Consolas);
-    	@include remixin('font-face', Consolas normal);
-    	@include remixin('font-face', Consolas normal 200);
+	Ex. @include remixin('font-face', Consolas); or
+    	@include remixin('font-face', Consolas normal); or
+    	@include remixin('font-face', Consolas normal 200); or
+    	@include remixin('font-face', Consolas 200 normal);
 
 <br />
 ####hyphens
@@ -223,7 +248,17 @@ See the LICENSE file.
 
 ##History
 
-**v0.1.23 - 2012-09-16**
+**v0.1.24 - 2012-08-20**
+ 
+ 
+* Added these properties:
+  * column-count
+  * column-gap
+  * column-rule
+
+***
+
+**v0.1.23 - 2012-08-16**
  
   * Added perspective property. Note that it's same as transform(perspective).
   * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates basic usage of remixin with box-shadow.
@@ -231,7 +266,7 @@ See the LICENSE file.
 
 ***
 
-**v0.1.22 - 2012-09-15**
+**v0.1.22 - 2012-08-15**
  
   * Added simple radial-gradient.
   * Added supported properties sections to the README.md.
