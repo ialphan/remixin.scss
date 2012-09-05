@@ -27,7 +27,7 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	transition
 	user-selec
 
-
+<br />
 ##Usage
 Call remixin with the property and value(s). Browser vendor(s) are optional.
 
