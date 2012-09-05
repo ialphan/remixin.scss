@@ -1,9 +1,9 @@
 #remixin.scss
 remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties. 
 
-Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory), demonstrates the basic usage of remixin with box-shadow.
+Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory, demonstrates the basic usage of remixin with box-shadow.
 
-<br /><br />
+<br />
 ##Supported Properties
 	animation
 	background-clip
@@ -25,9 +25,9 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
  	::selection
 	transform
 	transition
-	user-selec
+	user-select
 
-<br /><br />
+<br />
 ##Usage
 Call remixin with the property and value(s). Browser vendor(s) are optional.
 
@@ -188,7 +188,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
     Ex. @include remixin(user-select, none);
 
-<br /><br />
+<br />
 ##Browser Support
 * Chrome (-webkit) as $webkit.
 * Firefox (-moz) as $moz.
@@ -198,7 +198,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 See individual properties above for implementation.
 
-<br /><br />
+<br />
 ##Advanced Usage (suggested)
 In the remixin() enable/disable browser vendors for your needs. Defaults are: 
  
@@ -228,22 +228,22 @@ Multiple browser vendors can be passed as arguments separated by commas:
  
 This will not generate any -moz nor -ms properties.
 
-<br /><br />
+<br />
 ##TextMate Bundle (snippet).
 Type *remixin* then press tab, it will generate the following code and place the cursor before the comma. **Note:** SCSS file extension must be selected in TextMate. 
 	
 	@include remixin(, ); 
 
-<br /><br />
+<br />
 ##License
 See the LICENSE file.
 
-<br /><br />
+<br />
 ##History
 
 **v0.1.24 - 2012-08-20**
- 
- 
+
+
 * Added these properties:
   * column-count
   * column-gap
@@ -252,7 +252,7 @@ See the LICENSE file.
 ***
 
 **v0.1.23 - 2012-08-16**
- 
+
   * Added perspective property. Note that it's same as transform(perspective).
   * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates the basic usage of remixin with box-shadow.
   * Added border-image property.
@@ -260,7 +260,7 @@ See the LICENSE file.
 ***
 
 **v0.1.22 - 2012-08-15**
- 
+
   * Added simple radial-gradient.
   * Added supported properties sections to the README.md.
   * Fixed a typo in advanced-usage.
@@ -268,20 +268,20 @@ See the LICENSE file.
 ***
 
 **v0.1.21 - 2012-06-19**
- 
+
   * Removed radial-gradient.
 
 ***
 
 **v0.1.2 - 2012-06-15**
- 
+
   * Added CSS3Pie for IE 8 fallbacks.
   * Added radial-gradient (gradient is now linear-gradient).
 
 ***
 
 **v0.1.1 - 2012-06-14**
- 
+
   * Updated incorrect usage for ::selection property in the README.md.
   * Added $fontPath variable to be used with font-face property.
   * Added these properties:
@@ -296,8 +296,8 @@ See the LICENSE file.
 ***
 
 **v0.1 - 2012-06-14**
- 
- 
+
+
 * Added these properties:
   * background-clip
   * background-size
