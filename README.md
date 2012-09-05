@@ -235,7 +235,7 @@ This will not generate any -moz nor -ms properties.
  
  
 ##TextMate Bundle (snippet).
-The SCSS file extension must be selected in TextMate. Type *remixin* then press tab, it will generate the following code and place the cursor before the comma.
+Type *remixin* then press tab, it will generate the following code and place the cursor before the comma. **Note:** SCSS file extension must be selected in TextMate. 
 	
 	@include remixin(, ); 
 <br />
