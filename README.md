@@ -15,7 +15,7 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	box-sizing
 	column-count
 	column-gap
-	column-rule		
+	column-rule
 	font-face
 	hyphens
 	linear-gradient
