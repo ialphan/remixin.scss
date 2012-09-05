@@ -1,9 +1,9 @@
 #remixin.scss
- 
- 
-remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties.
-<br /><br />
+remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties. 
 
+Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory), demonstrates the basic usage of remixin with box-shadow.
+
+<br /><br />
 ##Supported Properties
 	animation
 	background-clip
@@ -27,14 +27,13 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 	transition
 	user-selec
 
-<br />
+<br /><br />
 ##Usage
 Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 	@include remixin(property, value, vendors);
 
 **Note:** Property has to be the first argument and value can be a list of parameters separated by space. See individual properties below for usage.
-
 
 <br />
 ####animation
@@ -189,9 +188,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
     Ex. @include remixin(user-select, none);
 
-<br />
-
- 
+<br /><br />
 ##Browser Support
 * Chrome (-webkit) as $webkit.
 * Firefox (-moz) as $moz.
@@ -200,9 +197,8 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 
 See individual properties above for implementation.
+
 <br /><br />
-
-
 ##Advanced Usage (suggested)
 In the remixin() enable/disable browser vendors for your needs. Defaults are: 
  
@@ -231,21 +227,18 @@ Multiple browser vendors can be passed as arguments separated by commas:
     Ex. @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
  
 This will not generate any -moz nor -ms properties.
+
 <br /><br />
- 
- 
 ##TextMate Bundle (snippet).
 Type *remixin* then press tab, it will generate the following code and place the cursor before the comma. **Note:** SCSS file extension must be selected in TextMate. 
 	
 	@include remixin(, ); 
-<br />
 
-
+<br /><br />
 ##License
 See the LICENSE file.
+
 <br /><br />
-
-
 ##History
 
 **v0.1.24 - 2012-08-20**
@@ -261,7 +254,7 @@ See the LICENSE file.
 **v0.1.23 - 2012-08-16**
  
   * Added perspective property. Note that it's same as transform(perspective).
-  * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates basic usage of remixin with box-shadow.
+  * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates the basic usage of remixin with box-shadow.
   * Added border-image property.
 
 ***
