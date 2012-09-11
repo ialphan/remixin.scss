@@ -229,7 +229,7 @@ Multiple browser vendors can be passed as arguments separated by commas:
 This will not generate any -moz nor -ms properties.
 
 <br />
-##TextMate Bundle (snippet).
+##TextMate Bundle (snippet)
 Type *remixin* then press tab, it will generate the following code and place the cursor before the comma. **Note:** SCSS file extension must be selected in TextMate. 
 	
 	@include remixin(, ); 
@@ -239,6 +239,10 @@ Type *remixin* then press tab, it will generate the following code and place the
 See the LICENSE file.
 
 <br />
+##Language
+CSS (SCSS).
+
+<br/ >
 ##History
 
 **v0.1.24 - 2012-08-20**
