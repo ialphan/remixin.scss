@@ -245,6 +245,13 @@ CSS (SCSS).
 <br/ >
 ##History
 
+**v0.1.24 - 2012-09-12**
+
+
+* Converted to a partial <http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#partials>.
+
+***
+
 **v0.1.24 - 2012-08-20**
 
 
