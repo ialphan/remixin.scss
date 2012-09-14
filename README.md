@@ -1,7 +1,7 @@
 #remixin.scss
 remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties. 
 
-Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory, demonstrates the basic usage of remixin with box-shadow.
+Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.css) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory, demonstrates the basic usage of remixin with box-shadow.
 
 <br />
 ##Supported Properties
