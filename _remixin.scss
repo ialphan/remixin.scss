@@ -13,6 +13,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       $property == 'column-count' or
       $property == 'column-gap' or
       $property == 'column-rule' or
+      $property == 'filter' or
       $property == 'font-face' or
       $property == 'hyphens' or
       $property == 'linear-gradient' or
@@ -21,9 +22,10 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       $property == 'radial-gradient' or
       $property == 'selection' or
       $property == 'transform' or
+      $property == 'transform-origin' or
       $property == 'transition' or
       $property == 'user-select'{
-    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, hyphens, perspective, transition
+    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, hyphens, perspective, transition
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
@@ -176,7 +178,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
            }
          }
       }
-    } @else if $property == 'transform'{  //  transform
+    } @else if $property == 'transform' or $property == 'transform-origin'{  //  transform, transform-origin
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;

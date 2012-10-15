@@ -16,6 +16,7 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	column-count
 	column-gap
 	column-rule
+	filter
 	font-face
 	hyphens
 	linear-gradient
@@ -24,6 +25,7 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	radial-gradient
  	::selection
 	transform
+	transform-origin	
 	transition
 	user-select
 
@@ -114,6 +116,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 	Ex. @include remixin('column-rule', solid 20px #f00);
 
 <br />
+####filter
+**Usage:** `(filter, <filter-function> [<filter-function>]* | none)`.
+<br />**Support:** Chrome 18+, Safari 6+.
+
+	Ex. @include remixin('filter', blur(5px));
+
+<br />
 ####font-face
 **Usage:** `(font-face, <font> | style || weight)`.
 <br />**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+.
@@ -172,7 +181,14 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`. 
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
-    Ex. @include remixin(transform, rotate(200deg);
+    Ex. @include remixin(transform, rotate(200deg));
+
+<br />
+####transform-origin
+**Usage:** `(transform-origin, [<percentage> | <length> | left | center | right | top | bottom] | [[<percentage> | <length> | left | center | right] && [<percentage> | <length> | top | center | bottom]] <length>?)`. 
+<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
+
+    Ex. @include remixin(transform-origin, 50% 50%);
 
 <br />
 ####transition
@@ -246,6 +262,15 @@ CSS (SCSS).
 
 <br/ >
 ##History
+
+**v0.1.25 - 2012-10-09**
+
+
+* Added these properties:
+  * transform-origin
+  * filter
+
+***
 
 **v0.1.24 - 2012-09-12**
 
