@@ -5,29 +5,28 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 
 <br />
 ##Supported Properties
-	animation
-	background-clip
-	background-size
-	border-image
-	border-radius
-	box-direction
-	box-shadow
-	box-sizing
-	column-count
-	column-gap
-	column-rule
-	filter
-	font-face
-	hyphens
-	linear-gradient
-	opacity
-	perspective
-	radial-gradient
- 	::selection
-	transform
-	transform-origin	
-	transition
-	user-select
+	- animation
+	- background-clip
+	- background-size
+	- border-image
+	- border-radius
+	- box-direction
+	- box-shadow
+	- box-sizing
+	- column-count
+	- column-gap
+	- column-rule
+	- font-face
+	- hyphens
+	- linear-gradient
+	- opacity
+	- perspective
+	- radial-gradient
+	- ::selection
+	- transform
+	- transform-origin	
+	- transition
+	- user-select
 
 <br />
 ##Usage
@@ -114,13 +113,6 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
 
 	Ex. @include remixin('column-rule', solid 20px #f00);
-
-<br />
-####filter
-**Usage:** `(filter, <filter-function> [<filter-function>]* | none)`.
-<br />**Support:** Chrome 18+, Safari 6+.
-
-	Ex. @include remixin('filter', blur(5px));
 
 <br />
 ####font-face
@@ -263,12 +255,10 @@ CSS (SCSS).
 <br/ >
 ##History
 
-**v0.1.25 - 2012-10-09**
+**v0.1.25 - 2012-10-15**
 
 
-* Added these properties:
-  * transform-origin
-  * filter
+* Added transform-origin.
 
 ***
 
