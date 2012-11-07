@@ -9,13 +9,13 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	- background-clip
 	- background-size
 	- border-image
-	- border-radius
 	- box-direction
 	- box-shadow
 	- box-sizing
 	- column-count
 	- column-gap
 	- column-rule
+	- filter
 	- font-face
 	- hyphens
 	- linear-gradient
@@ -64,13 +64,6 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />**Support:** Chrome 19+, Firefox 3.6+, Safari 5.1+.
 
 	Ex. @include remixin(border-image, url(borderImage.png) 20 20 round);
-
-<br />
-####border-radius
-**Usage:** `(border-radius, [<length> | <percentage> ]{1,4} [ / [ <length> | <percentage> ]{1,4}]?)`. 
-<br />**Support:** Chrome 4+, Firefox 4+, IE9+ (IE8 with CSS3Pie), Safari 3+.
-
-	Ex. @include remixin(border-radius, 20px);
 
 <br />
 ####box-direction
@@ -200,7 +193,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 ##Browser Support
 * Chrome (-webkit) as $webkit.
 * Firefox (-moz) as $moz.
-* Internet Explorer (-ms) as $ms (IE 10), $ms9 (IE 9), $ms8 (IE 8).
+* Internet Explorer (-ms) as $ms.
 * Safari (-webkit) as $webkit.
 
 
@@ -210,10 +203,10 @@ See individual properties above for implementation.
 ##Advanced Usage (suggested)
 In the remixin() enable/disable browser vendors for your needs. Defaults are: 
  
-	$moz: true, $ms8: false, $ms9:true, $ms: true, $webkit: true
+	$moz: true, $ms: true, $webkit: true
      
 If you are developing for Chrome/Safari set $webkit to true, for Firefox set $moz to true,
-for IE 10 but not IE8/9, set $ms8 and $ms9 to false and $ms to true.
+for IE set $ms to true.
  
 You can also target these when you are calling your remixin. Here is an example setting your font-face. Declare your variables:
  
@@ -223,7 +216,6 @@ You can also target these when you are calling your remixin. Here is an example 
 Decide on which vendor you don't need and then turn it off:
  
     $ms: false
-**Note:** This will also disable IE 8 ($ms8)  and IE 9 ($ms9). IE ($ms) > IE 8 ($ms8) | IE 9 ($ms9)
 
 <br />
 Then use them in your remixin:
@@ -254,6 +246,14 @@ CSS (SCSS).
 
 <br/ >
 ##History
+
+**v0.1.26 - 2012-11-07**
+
+
+* Removed IE8 support: removed border-radius. MS9 is now just MS.
+* Added filter property.
+
+***
 
 **v0.1.25 - 2012-10-15**
 
