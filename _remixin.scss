@@ -1,18 +1,17 @@
 $fontPath: nil !default;  //  font path for the font-face.
-$piePath: nil !default;  //  pie path for IE8 fallbacks.
 
-@mixin remixin($property, $value, $moz: true, $ms8: true, $ms9:true, $ms: true, $webkit: true){
+@mixin remixin($property, $value, $moz: true, $ms: true, $webkit: true){
   @if $property == 'animation' or
       $property == 'background-clip' or
       $property == 'background-size' or
       $property == 'border-image' or
-      $property == 'border-radius' or
       $property == 'box-direction' or
       $property == 'box-shadow' or
       $property == 'box-sizing' or
       $property == 'column-count' or
       $property == 'column-gap' or
       $property == 'column-rule' or
+      $property == 'filter' or
       $property == 'font-face' or
       $property == 'hyphens' or
       $property == 'linear-gradient' or
@@ -24,7 +23,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       $property == 'transform-origin' or
       $property == 'transition' or
       $property == 'user-select'{
-    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, hyphens, perspective, transition
+    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, filter, hyphens, perspective, transition
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
@@ -32,7 +31,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       @if $webkit{
         -webkit-#{$property}: $value;
       }
-    } @else if $property == 'box-direction'{ //  box-direction
+    }@else if $property == 'box-direction'{ //  box-direction
       display:box;
       #{$property}: $value;
       @if $moz{
@@ -43,31 +42,15 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
         display:-webkit-box;
         -webkit-#{$property}: $value;
       }
-    } @else if $property == 'border-radius'{  //  border-radius
+    }@else if $property == 'box-shadow'{ //  box-shadow
       #{$property}: $value;
-      @if $ms{
-        @if $ms8{
-          @if $piePath != nil{
-            behavior: url($piePath + 'PIE.htc');
-          }
-        }
-      }
-    } @else if $property == 'box-shadow'{ //  box-shadow
-      #{$property}: $value;
-      @if $ms{
-        @if $ms8{
-          @if $piePath != nil{
-            behavior: url($piePath + 'PIE.htc');
-          }
-        }
-      }
       @if $moz{
         -moz-#{$property}: $value;
       }
       @if $webkit{
         -webkit-#{$property}: $value;
       }
-    } @else if $property == 'font-face'{  //  font-face
+    }@else if $property == 'font-face'{  //  font-face
       @if $fontPath != nil{
         @if length($value) == 1{
           @font-face{
@@ -85,7 +68,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
             font-family: nth($value, 1);
             @if type-of(nth($value, 2)) == number{
               font-weight: nth($value, 2);
-            } @else if type-of(nth($value, 2)) == string{
+            }@else if type-of(nth($value, 2)) == string{
               font-style: nth($value, 2);
             }
             @if $ms{
@@ -99,12 +82,12 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
             font-family: nth($value, 1);
             @if type-of(nth($value, 2)) == number{
               font-weight: nth($value, 2);
-            } @else if type-of(nth($value, 2)) == string{
+            }@else if type-of(nth($value, 2)) == string{
               font-style: nth($value, 2);
             }
             @if type-of(nth($value, 3)) == number{
               font-weight: nth($value, 3);
-            } @else if type-of(nth($value, 3)) == string{
+            }@else if type-of(nth($value, 3)) == string{
               font-style: nth($value, 3);
             }
             @if $ms{
@@ -114,32 +97,23 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
           }
         }
       }
-    } @else if $property == 'linear-gradient'{  //  linear-gradient
+    }@else if $property == 'linear-gradient'{  //  linear-gradient
       @if $moz{
           background-image: -moz-linear-gradient($value);
       }
       @if $ms{
         background-image: -ms-linear-gradient($value);
-        @if $ms8{
-          @if $piePath != nil{
-            behavior: url($piePath + 'PIE.htc');
-            -pie-background: linear-gradient($value);
-          }
-        }
       }
       @if $webkit{
           background-image: -webkit-linear-gradient($value);
       }
-    } @else if $property == 'opacity'{  //  opacity
+    }@else if $property == 'opacity'{  //  opacity
       #{$property}: $value;
       @if $ms{
-        @if $ms8{
-          filter: alpha(opacity=#{$value * 100});
-        }
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
         zoom:1;
       }
-    } @else if $property == 'radial-gradient'{  //  radial-gradient
+    }@else if $property == 'radial-gradient'{  //  radial-gradient
       @if $moz{
         background-image: -moz-radial-gradient($value);
       }
@@ -149,7 +123,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
       @if $webkit{
         background-image: -webkit-radial-gradient($value);
       }
-    } @else if $property == 'selection'{  //  selection
+    }@else if $property == 'selection'{  //  selection
       @if length($value) == 1{
         ::selection{
            background: nth($value, 1);
@@ -159,7 +133,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
              background: nth($value, 1);
            }
          }
-      } @else if length($value) == 2{
+      }@else if length($value) == 2{
         ::selection{
            background: nth($value, 1);
            color: nth($value, 2);
@@ -177,20 +151,18 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
            }
          }
       }
-    } @else if $property == 'transform' or $property == 'transform-origin'{  //  transform, transform-origin
+    }@else if $property == 'transform' or $property == 'transform-origin'{  //  transform, transform-origin
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
       }
       @if $ms{
-        @if $ms9{
-          -ms-#{$property}: $value;
-        }
+        -ms-#{$property}: $value;
       }
       @if $webkit{
         -webkit-#{$property}: $value;
       }
-    } @else if $property == 'animation' or $property == 'user-select'{  //  animation, user-select
+    }@else if $property == 'animation' or $property == 'user-select'{  //  animation, user-select
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
@@ -202,7 +174,7 @@ $piePath: nil !default;  //  pie path for IE8 fallbacks.
         -webkit-#{$property}: $value;
       }
     }
-  } @else{
+  }@else{
     @warn "Unsupported CSS property. :(";
   }
 }
