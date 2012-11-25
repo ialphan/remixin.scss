@@ -6,6 +6,7 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 <br />
 ##Supported Properties
 	- animation
+	- backface-visibility
 	- background-clip
 	- background-size
 	- border-image
@@ -44,6 +45,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
  
 	Ex. @include remixin(animation, move 1s infinite);
  
+<br />
+####backface-visibility
+**Usage:** `(backface-visibility, visible | hidden)`.
+<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+	
+	Ex. @include remixin(backface-visibility, hidden);
+
 <br />
 ####background-clip
 **Usage:** `(background-clip, border-box | padding-box | content-box [, border-box | padding-box | content-box]*)`.
@@ -258,7 +266,9 @@ CSS (SCSS).
 **v0.1.26 - 2012-11-25**
 
 
-* Added transform-style.
+* Added these properties:
+  * backface-visibility
+  * transform-style
 
 ***
 

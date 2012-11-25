@@ -2,6 +2,7 @@ $fontPath: nil !default;  //  font path for the font-face.
 
 @mixin remixin($property, $value, $moz: true, $ms: true, $webkit: true){
   @if $property == 'animation' or
+      $property == 'backface-visibility' or
       $property == 'background-clip' or
       $property == 'background-size' or
       $property == 'border-image' or
@@ -24,7 +25,7 @@ $fontPath: nil !default;  //  font path for the font-face.
       $property == 'transform-style' or
       $property == 'transition' or
       $property == 'user-select'{
-    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, filter, hyphens, perspective, transition
+    @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or  $property == 'box-shadow' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-shadow, box-sizin, column-count, column-gap, column-rule, filter, hyphens, perspective, transition
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
@@ -33,22 +34,14 @@ $fontPath: nil !default;  //  font path for the font-face.
         -webkit-#{$property}: $value;
       }
     }@else if $property == 'box-direction'{ //  box-direction
-      display:box;
+      display: box;
       #{$property}: $value;
       @if $moz{
-        display:-moz-box;
+        display: -moz-box;
         -moz-#{$property}: $value;
       }
       @if $webkit{
-        display:-webkit-box;
-        -webkit-#{$property}: $value;
-      }
-    }@else if $property == 'box-shadow'{ //  box-shadow
-      #{$property}: $value;
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $webkit{
+        display: -webkit-box;
         -webkit-#{$property}: $value;
       }
     }@else if $property == 'font-face'{  //  font-face
@@ -114,7 +107,7 @@ $fontPath: nil !default;  //  font path for the font-face.
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
         zoom:1;
       }
-    }@else if $property == 'radial-gradient'{  //  radial-gradient
+    }@else if $property == 'backface-visibility' or  $property == 'radial-gradient'{  //  backface-visibility, radial-gradient
       @if $moz{
         background-image: -moz-radial-gradient($value);
       }
@@ -152,18 +145,7 @@ $fontPath: nil !default;  //  font path for the font-face.
            }
          }
       }
-    }@else if $property == 'transform' or $property == 'transform-origin' or $property == 'transform-style'{  //  transform, transform-origin, transform-style
-      #{$property}: $value;
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $ms{
-        -ms-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-    }@else if $property == 'animation' or $property == 'user-select'{  //  animation, user-select
+    }@else if $property == 'animation' or $property == 'transform' or $property == 'transform-origin' or $property == 'transform-style' or $property == 'user-select'{  //  animation, transform, transform-origin, transform-style, user-select
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
