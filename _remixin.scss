@@ -107,7 +107,17 @@ $fontPath: nil !default;  //  font path for the font-face.
         -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
         zoom:1;
       }
-    }@else if $property == 'backface-visibility' or  $property == 'radial-gradient'{  //  backface-visibility, radial-gradient
+    }@else if $property == 'backface-visibility'{  //  backface-visibility
+      @if $moz{
+        -moz-#{$property}: $value;
+      }
+      @if $ms{
+        -ms-#{$property}: $value;
+      }
+      @if $webkit{
+        -webkit-#{$property}: $value;
+      }
+    }@else if $property == 'backface-visibility' or  $property == 'radial-gradient'{  // radial-gradient
       @if $moz{
         background-image: -moz-radial-gradient($value);
       }
