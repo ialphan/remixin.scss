@@ -24,7 +24,8 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	- radial-gradient
 	- ::selection
 	- transform
-	- transform-origin	
+	- transform-origin
+	- transform-style
 	- transition
 	- user-select
 
@@ -176,6 +177,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
     Ex. @include remixin(transform-origin, 50% 50%);
 
 <br />
+####transform-style
+**Usage:** `(transform-style, flat | preserve-3d )`. 
+<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+
+    Ex. @include remixin(transform-origin, preserve-3d);
+
+<br />
 ####transition
 **Usage:** `(transition, none|all|property time linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n) time)`.
 <br />**Support:** Chrome 1+, Firefox 4+, IE 10+, Safari 3.2+.
@@ -246,6 +254,13 @@ CSS (SCSS).
 
 <br/ >
 ##History
+
+**v0.1.26 - 2012-11-25**
+
+
+* Added transform-style.
+
+***
 
 **v0.1.26 - 2012-11-07**
 

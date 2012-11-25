@@ -21,6 +21,7 @@ $fontPath: nil !default;  //  font path for the font-face.
       $property == 'selection' or
       $property == 'transform' or
       $property == 'transform-origin' or
+      $property == 'transform-style' or
       $property == 'transition' or
       $property == 'user-select'{
     @if $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or $property == 'box-sixing' or $property == 'column-count' or $property == 'column-gap' or $property == 'column-rule' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{  //  background-clip, background-size, border-image, box-sizin, column-count, column-gap, column-rule, filter, hyphens, perspective, transition
@@ -151,7 +152,7 @@ $fontPath: nil !default;  //  font path for the font-face.
            }
          }
       }
-    }@else if $property == 'transform' or $property == 'transform-origin'{  //  transform, transform-origin
+    }@else if $property == 'transform' or $property == 'transform-origin' or $property == 'transform-style'{  //  transform, transform-origin, transform-style
       #{$property}: $value;
       @if $moz{
         -moz-#{$property}: $value;
