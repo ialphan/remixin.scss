@@ -167,7 +167,5 @@ $fontPath: nil !default;  //  font path for the font-face.
         -webkit-#{$property}: $value;
       }
     }
-  }@else{
-    @warn "Unsupported CSS property. :(";
   }
 }
