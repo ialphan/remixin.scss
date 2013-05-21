@@ -268,6 +268,8 @@ CSS (SCSS).
 
 * Added Sublime Text snippet.
 
+***
+
 **v0.1.26 - 2012-11-25**
 
 
