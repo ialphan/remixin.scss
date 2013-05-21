@@ -1,5 +1,5 @@
 #remixin.scss
-remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties. 
+remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically Awesome Stylesheets*) [mixin](http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#mixins) (like macros — re-usable css properties, selectors with arguments) to generate vendor specific css properties.
 
 Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.css) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory, demonstrates the basic usage of remixin with box-shadow.
 
@@ -42,21 +42,21 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 ####animation
 **Usage:** `(animation, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>][, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] ]*)`.
 <br />**Support:** Chrome 4, Firefox 5+, IE 10+, Safari 4+.
- 
+
 	Ex. @include remixin(animation, move 1s infinite);
- 
+
 <br />
 ####backface-visibility
 **Usage:** `(backface-visibility, visible | hidden)`.
 <br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
-	
+
 	Ex. @include remixin(backface-visibility, hidden);
 
 <br />
 ####background-clip
 **Usage:** `(background-clip, border-box | padding-box | content-box [, border-box | padding-box | content-box]*)`.
 <br />**Support:** Chrome 4+, Firefox 3.5+, IE9+, Safari 3+.
-	
+
 	Ex. @include remixin(background-clip, border-box);
 
 <br />
@@ -65,29 +65,29 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br />**Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
 
 	Ex. @include remixin(background-size, 20px 20px);
- 
+
 <br />
 ####border-image
 **Usage:** `(border-image, <border-image-source> || <border-image-slice> [ / <border-image-width> |
-/ <border-image-width>? / <border-image-outset> ]? || <border-image-repeat>)`. 
+/ <border-image-width>? / <border-image-outset> ]? || <border-image-repeat>)`.
 <br />**Support:** Chrome 19+, Firefox 3.6+, Safari 5.1+.
 
 	Ex. @include remixin(border-image, url(borderImage.png) 20 20 round);
 
 <br />
 ####box-direction
-**Usage:** `(box-direction, normal | reverse | inherit)`. 
+**Usage:** `(box-direction, normal | reverse | inherit)`.
 <br />**Support:** Chrome 1+, Firefox 1+, Safari 2+.
 
 	Ex. @include remixin(box-direction, reverse);
- 
+
 <br />
 ####box-shadow
 **Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`.
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+ (IE8 with CSS3Pie), Safari 3+.
 
 	Ex. @include remixin(box-shadow, 20px 20px 20px #f00);
- 
+
 <br />
 ####box-sizing
 **Usage:** `(box-sizing, content-box | border-box | inherit)`.
@@ -130,26 +130,26 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 ####hyphens
 **Usage:** `(hyphens, none | manual | auto`.
 <br />**Support:** Chrome 13+ Firefox 6+, IE 10+, Safari 5.1+.
-	
+
 	Ex. @include hyphens('hyphens', none);
- 
+
 <br />
 ####linear-gradient
 **Usage:** `(linear-gradient, ([<point> || <angle>,]? <stop>, <stop> [, <stop>]))`:
 <br />**Support:** Chorome 3+, Firefox 3.6+, IE10+ (compatible down to IE 8), Safari 4+.
- 
+
     Ex. @include remixin(linear-gradient, left #f00 #00f);
 
 <br />
 ####opacity
-**Usage:** `(opacity, <alphavalue> | inherit)`. 
+**Usage:** `(opacity, <alphavalue> | inherit)`.
 <br />**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
     Ex. @include remixin(opacity, 0.2);
 
 <br />
 ####perspective
-**Usage:** `(perspective, none | <length>)`. 
+**Usage:** `(perspective, none | <length>)`.
 <br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 <br />**Note:** Same as transform(perspective).
 
@@ -159,34 +159,34 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 ####radial-gradient (simple)
 **Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
 <br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
- 
+
     Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
 
 <br />
 
 ####::selection
-**Usage:** `(selection, background color)`. 
+**Usage:** `(selection, background color)`.
 <br />**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
 
     Ex. @include remixin(selection, #f00);
 
 <br />
 ####transform
-**Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`. 
+**Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`.
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
     Ex. @include remixin(transform, rotate(200deg));
 
 <br />
 ####transform-origin
-**Usage:** `(transform-origin, [<percentage> | <length> | left | center | right | top | bottom] | [[<percentage> | <length> | left | center | right] && [<percentage> | <length> | top | center | bottom]] <length>?)`. 
+**Usage:** `(transform-origin, [<percentage> | <length> | left | center | right | top | bottom] | [[<percentage> | <length> | left | center | right] && [<percentage> | <length> | top | center | bottom]] <length>?)`.
 <br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
     Ex. @include remixin(transform-origin, 50% 50%);
 
 <br />
 ####transform-style
-**Usage:** `(transform-style, flat | preserve-3d )`. 
+**Usage:** `(transform-style, flat | preserve-3d )`.
 <br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 
     Ex. @include remixin(transform-origin, preserve-3d);
@@ -200,7 +200,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 <br />
 ####user-select
-**Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`. 
+**Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`.
 <br />**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
     Ex. @include remixin(user-select, none);
@@ -217,40 +217,40 @@ See individual properties above for implementation.
 
 <br />
 ##Advanced Usage (suggested)
-In the remixin() enable/disable browser vendors for your needs. Defaults are: 
- 
+In the remixin() enable/disable browser vendors for your needs. Defaults are:
+
 	$moz: true, $ms: true, $webkit: true
-     
+
 If you are developing for Chrome/Safari set $webkit to true, for Firefox set $moz to true,
 for IE set $ms to true.
- 
+
 You can also target these when you are calling your remixin. Here is an example setting your font-face. Declare your variables:
- 
+
     $fontStyle: normal;
     $fontWidth: 600;
- 
+
 Decide on which vendor you don't need and then turn it off:
- 
+
     $ms: false
 
 <br />
 Then use them in your remixin:
- 
+
 	Ex. @include remixin(font-face, $fontStyle $fontWidth, $ms: false);
- 
+
 Multiple browser vendors can be passed as arguments separated by commas:
- 
+
     Ex. @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
- 
+
 This will not generate any -moz nor -ms properties.
 
 <br />
-##TextMate Bundle (snippet)
-Type *remixin* then press ⇥ (tab), it will generate the following code and place the cursor before the comma. **Note:** SCSS file extension must be selected in TextMate. 
+##TextMate and Sublime Text Bundle (snippet) (suggested)
+Type *remixin* then press ⇥ (tab), it will generate the following code and place the cursor before the comma then press ⇥ (tab) again to place the cursor after the comma. If you press ⇥ (tab) one more time it will place the cursor at the end of the snippet. **Note:** SCSS file extension must be selected in TextMate or Sublime Text.
 
 	Ex. remixin ⇥
-	
-	@include remixin(, ); 
+
+	@include remixin(, );
 
 <br />
 ##License
@@ -262,6 +262,11 @@ CSS (SCSS).
 
 <br/ >
 ##History
+
+**v0.1.27 - 2013-05-21**
+
+
+* Added Sublime Text snippet.
 
 **v0.1.26 - 2012-11-25**
 
