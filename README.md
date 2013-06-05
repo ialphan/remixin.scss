@@ -3,7 +3,7 @@ remixin is a simple and efficient [SCSS](http://sass-lang.com) (*Syntactically A
 
 Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.css) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory, demonstrates the basic usage of remixin with box-shadow.
 
-<br />
+<br>
 ##Supported Properties
 	- animation
 	- backface-visibility
@@ -30,7 +30,7 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	- transition
 	- user-select
 
-<br />
+<br>
 ##Usage
 Call remixin with the property and value(s). Browser vendor(s) are optional.
 
@@ -38,174 +38,174 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 **Note:** Property has to be the first argument and value can be a list of parameters separated by space. See individual properties below for usage.
 
-<br />
+<br>
 ####animation
 **Usage:** `(animation, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>][, [<animation-name> || <animation-duration> || <animation-timing-function> || <animation-delay> || <animation-iteration-count> || <animation-direction>] ]*)`.
-<br />**Support:** Chrome 4, Firefox 5+, IE 10+, Safari 4+.
+<br>**Support:** Chrome 4, Firefox 5+, IE 10+, Safari 4+.
 
 	Ex. @include remixin(animation, move 1s infinite);
 
-<br />
+<br>
 ####backface-visibility
 **Usage:** `(backface-visibility, visible | hidden)`.
-<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+<br>**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 
 	Ex. @include remixin(backface-visibility, hidden);
 
-<br />
+<br>
 ####background-clip
 **Usage:** `(background-clip, border-box | padding-box | content-box [, border-box | padding-box | content-box]*)`.
-<br />**Support:** Chrome 4+, Firefox 3.5+, IE9+, Safari 3+.
+<br>**Support:** Chrome 4+, Firefox 3.5+, IE9+, Safari 3+.
 
 	Ex. @include remixin(background-clip, border-box);
 
-<br />
+<br>
 ####background-size
 **Usage:** `(background-size, [<length> | <percentage> | auto ]{1,2} | cover | contain [, [ <length> | <percentage> | auto ]{1,2} | cover | contain]*)`.
-<br />**Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 3.6+, IE9+, Safari 3+.
 
 	Ex. @include remixin(background-size, 20px 20px);
 
-<br />
+<br>
 ####border-image
 **Usage:** `(border-image, <border-image-source> || <border-image-slice> [ / <border-image-width> |
 / <border-image-width>? / <border-image-outset> ]? || <border-image-repeat>)`.
-<br />**Support:** Chrome 19+, Firefox 3.6+, Safari 5.1+.
+<br>**Support:** Chrome 19+, Firefox 3.6+, Safari 5.1+.
 
 	Ex. @include remixin(border-image, url(borderImage.png) 20 20 round);
 
-<br />
+<br>
 ####box-direction
 **Usage:** `(box-direction, normal | reverse | inherit)`.
-<br />**Support:** Chrome 1+, Firefox 1+, Safari 2+.
+<br>**Support:** Chrome 1+, Firefox 1+, Safari 2+.
 
 	Ex. @include remixin(box-direction, reverse);
 
-<br />
+<br>
 ####box-shadow
 **Usage:** `(box-shadow, none | < inset? && [ <length>{2,4} && <color>? ]> [, < inset? && [ <length>{2,4} && <color>? ]> ]*)`.
-<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+ (IE8 with CSS3Pie), Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 3.5+, IE9+ (IE8 with CSS3Pie), Safari 3+.
 
 	Ex. @include remixin(box-shadow, 20px 20px 20px #f00);
 
-<br />
+<br>
 ####box-sizing
 **Usage:** `(box-sizing, content-box | border-box | inherit)`.
-<br />**Support:** Chrome 1+, Firefox 1+, IE 8+, Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 1+, IE 8+, Safari 3+.
 
 	Ex. @include remixin(box-sizing, content-box);
 
-<br />
+<br>
 ####column-count
 **Usage:** `(column-count, <integer> | auto)`.
-<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
 
 	Ex. @include remixin('column-count', 2);
 
-<br />
+<br>
 ####column-gap
 **Usage:** `(column-gap, <length> | normal)`.
-<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
 
 	Ex. @include remixin('column-gap', 20px);
 
-<br />
+<br>
 ####column-rule
 **Usage:** `(column-rule, <border-width> || <border-style> || <color>)`.
-<br />**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
 
 	Ex. @include remixin('column-rule', solid 20px #f00);
 
-<br />
+<br>
 ####font-face
 **Usage:** `(font-face, <font> | style || weight)`.
-<br />**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+.
+<br>**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+.
 
 	Ex. @include remixin('font-face', Consolas); or
     	@include remixin('font-face', Consolas normal); or
     	@include remixin('font-face', Consolas normal 200); or
     	@include remixin('font-face', Consolas 200 normal);
 
-<br />
+<br>
 ####hyphens
 **Usage:** `(hyphens, none | manual | auto`.
-<br />**Support:** Chrome 13+ Firefox 6+, IE 10+, Safari 5.1+.
+<br>**Support:** Chrome 13+ Firefox 6+, IE 10+, Safari 5.1+.
 
 	Ex. @include hyphens('hyphens', none);
 
-<br />
+<br>
 ####linear-gradient
 **Usage:** `(linear-gradient, ([<point> || <angle>,]? <stop>, <stop> [, <stop>]))`:
-<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+ (compatible down to IE 8), Safari 4+.
+<br>**Support:** Chorome 3+, Firefox 3.6+, IE10+ (compatible down to IE 8), Safari 4+.
 
     Ex. @include remixin(linear-gradient, left #f00 #00f);
 
-<br />
+<br>
 ####opacity
 **Usage:** `(opacity, <alphavalue> | inherit)`.
-<br />**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
+<br>**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
     Ex. @include remixin(opacity, 0.2);
 
-<br />
+<br>
 ####perspective
 **Usage:** `(perspective, none | <length>)`.
-<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
-<br />**Note:** Same as transform(perspective).
+<br>**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+<br>**Note:** Same as transform(perspective).
 
     Ex. @include remixin(perspective, 200px);
 
-<br />
+<br>
 ####radial-gradient (simple)
 **Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
-<br />**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
+<br>**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
 
     Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
 
-<br />
+<br>
 
 ####::selection
 **Usage:** `(selection, background color)`.
-<br />**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
+<br>**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
 
     Ex. @include remixin(selection, #f00);
 
-<br />
+<br>
 ####transform
 **Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`.
-<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
+<br>**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
     Ex. @include remixin(transform, rotate(200deg));
 
-<br />
+<br>
 ####transform-origin
 **Usage:** `(transform-origin, [<percentage> | <length> | left | center | right | top | bottom] | [[<percentage> | <length> | left | center | right] && [<percentage> | <length> | top | center | bottom]] <length>?)`.
-<br />**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
+<br>**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
     Ex. @include remixin(transform-origin, 50% 50%);
 
-<br />
+<br>
 ####transform-style
 **Usage:** `(transform-style, flat | preserve-3d )`.
-<br />**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
+<br>**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 
     Ex. @include remixin(transform-origin, preserve-3d);
 
-<br />
+<br>
 ####transition
 **Usage:** `(transition, none|all|property time linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n) time)`.
-<br />**Support:** Chrome 1+, Firefox 4+, IE 10+, Safari 3.2+.
+<br>**Support:** Chrome 1+, Firefox 4+, IE 10+, Safari 3.2+.
 
     Ex. @include remixin(transition, all 2s);
 
-<br />
+<br>
 ####user-select
 **Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`.
-<br />**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
+<br>**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
     Ex. @include remixin(user-select, none);
 
-<br />
+<br>
 ##Browser Support
 * Chrome (-webkit) as $webkit.
 * Firefox (-moz) as $moz.
@@ -215,7 +215,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 
 See individual properties above for implementation.
 
-<br />
+<br>
 ##Advanced Usage (suggested)
 In the remixin() enable/disable browser vendors for your needs. Defaults are:
 
@@ -233,7 +233,7 @@ Decide on which vendor you don't need and then turn it off:
 
     $ms: false
 
-<br />
+<br>
 Then use them in your remixin:
 
 	Ex. @include remixin(font-face, $fontStyle $fontWidth, $ms: false);
@@ -244,7 +244,7 @@ Multiple browser vendors can be passed as arguments separated by commas:
 
 This will not generate any -moz nor -ms properties.
 
-<br />
+<br>
 ##TextMate and Sublime Text Bundle (snippet) (suggested)
 Type *remixin* then press ⇥ (tab), it will generate the following code and place the cursor before the comma then press ⇥ (tab) again to place the cursor after the comma. If you press ⇥ (tab) one more time it will place the cursor at the end of the snippet. **Note:** SCSS file extension must be selected in TextMate or Sublime Text.
 
@@ -252,16 +252,17 @@ Type *remixin* then press ⇥ (tab), it will generate the following code and pla
 
 	@include remixin(, );
 
-<br />
+<br>
 ##License
 See the LICENSE file.
 
-<br />
+<br>
 ##Language
 CSS (SCSS).
 
-<br/ >
+<br>
 ##History
+
 
 **v0.1.27 - 2013-05-21**
 
