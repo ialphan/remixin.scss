@@ -6,6 +6,7 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 <br>
 ##Supported Properties
 	- animation
+	- appearence
 	- backface-visibility
 	- background-clip
 	- background-size
@@ -14,8 +15,14 @@ Demo: [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.
 	- box-shadow
 	- box-sizing
 	- column-count
+	- column-fill
 	- column-gap
 	- column-rule
+	- column-rule-color
+	- column-rule-style
+	- column-rule-width
+	- column-span
+	- column-width
 	- filter
 	- font-face
 	- hyphens
@@ -44,6 +51,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br>**Support:** Chrome 4, Firefox 5+, IE 10+, Safari 4+.
 
 	Ex. @include remixin(animation, move 1s infinite);
+
+<br>
+####appearence
+**Usage:** `(appearence, normal | icon | window | button | menu | field)`.
+<br>**Support:** Chrome 1, Firefox 1+, Safari 3+.
+
+	Ex. @include remixin(appearence, none);
 
 <br>
 ####backface-visibility
@@ -103,6 +117,13 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 	Ex. @include remixin('column-count', 2);
 
 <br>
+####column-fill (TODO)
+**Usage:** `(column-fill, auto | balance)`.
+<br>**Support:** Chrome 1+, Firefox 13+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-fill', 2);
+
+<br>
 ####column-gap
 **Usage:** `(column-gap, <length> | normal)`.
 <br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
@@ -117,14 +138,49 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 	Ex. @include remixin('column-rule', solid 20px #f00);
 
 <br>
+####column-rule-color
+**Usage:** `(column-rule-color, <color>)`.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-rule-color', red);
+
+<br>
+####column-rule-style
+**Usage:** `(column-rule-style, <border-style>)`.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-rule-style', dotted);
+
+<br>
+####column-rule-width
+**Usage:** `(column-rule-width, <border-width>)`.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-rule-width', 3px);
+
+<br>
+####column-span
+**Usage:** `(column-span, none | all)`.
+<br>**Support:** Chrome 1+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-span', all);
+
+<br>
+####column-width (TODO)
+**Usage:** `(column-width, <length> | auto)`.
+<br>**Support:** Chrome 1+, Firefox 1.5+, IE10+, Safari 3+.
+
+	Ex. @include remixin('column-width', 100px);
+
+<br>
 ####font-face
 **Usage:** `(font-face, <font> | style || weight)`.
 <br>**Support:** Chrome 4+, Firefox 3.5+, IE4+, Safari 3.1+.
 
 	Ex. @include remixin('font-face', Consolas); or
-    	@include remixin('font-face', Consolas normal); or
-    	@include remixin('font-face', Consolas normal 200); or
-    	@include remixin('font-face', Consolas 200 normal);
+			@include remixin('font-face', Consolas normal); or
+			@include remixin('font-face', Consolas normal 200); or
+			@include remixin('font-face', Consolas 200 normal);
 
 <br>
 ####hyphens
@@ -138,14 +194,14 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(linear-gradient, ([<point> || <angle>,]? <stop>, <stop> [, <stop>]))`:
 <br>**Support:** Chorome 3+, Firefox 3.6+, IE10+ (compatible down to IE 8), Safari 4+.
 
-    Ex. @include remixin(linear-gradient, left #f00 #00f);
+		Ex. @include remixin(linear-gradient, left #f00 #00f);
 
 <br>
 ####opacity
 **Usage:** `(opacity, <alphavalue> | inherit)`.
 <br>**Support:** Chrome 1+, Firefox 1+, IE9+ (compatible down to IE 8), Safari 1.2+.
 
-    Ex. @include remixin(opacity, 0.2);
+		Ex. @include remixin(opacity, 0.2);
 
 <br>
 ####perspective
@@ -153,14 +209,14 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 <br>**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 <br>**Note:** Same as transform(perspective).
 
-    Ex. @include remixin(perspective, 200px);
+		Ex. @include remixin(perspective, 200px);
 
 <br>
 ####radial-gradient (simple)
 **Usage:** `(radial-gradient, ([<position> || <angle>,]? [<shape> || <size>,]? <stop>, <stop>[, <stop>]*)`:
 <br>**Support:** Chorome 3+, Firefox 3.6+, IE10+, Safari 4+.
 
-    Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
+		Ex. @include remixin(radial-gradient, center, ellipse cover, #f00 0%, #00f 100%);
 
 <br>
 
@@ -168,42 +224,42 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(selection, background color)`.
 <br>**Support:** Chrome 1+, Firefox 1+, IE 9+, Safari 1.1+.
 
-    Ex. @include remixin(selection, #f00);
+		Ex. @include remixin(selection, #f00);
 
 <br>
 ####transform
 **Usage:** `(transform, none | matrix | matrix3d | translate | translate3d | translateX | translateY | translateZ | scale | scale3d | scaleX | scaleY | scaleZ | rotate | rotate3d | rotateX | rotateY | rotateZ | skew | skewX | skewY | perspective)`.
 <br>**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
-    Ex. @include remixin(transform, rotate(200deg));
+		Ex. @include remixin(transform, rotate(200deg));
 
 <br>
 ####transform-origin
 **Usage:** `(transform-origin, [<percentage> | <length> | left | center | right | top | bottom] | [[<percentage> | <length> | left | center | right] && [<percentage> | <length> | top | center | bottom]] <length>?)`.
 <br>**Support:** Chrome 1+, Firefox 3.5+, IE9+, Safari 3.1+.
 
-    Ex. @include remixin(transform-origin, 50% 50%);
+		Ex. @include remixin(transform-origin, 50% 50%);
 
 <br>
 ####transform-style
 **Usage:** `(transform-style, flat | preserve-3d )`.
 <br>**Support:** Chrome 12+, Firefox 10+, IE10+, Safari 4+.
 
-    Ex. @include remixin(transform-origin, preserve-3d);
+		Ex. @include remixin(transform-origin, preserve-3d);
 
 <br>
 ####transition
-**Usage:** `(transition, none|all|property time linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(n,n,n,n) time)`.
+**Usage:** `(transition, none | all | property time linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n) time)`.
 <br>**Support:** Chrome 1+, Firefox 4+, IE 10+, Safari 3.2+.
 
-    Ex. @include remixin(transition, all 2s);
+		Ex. @include remixin(transition, all 2s);
 
 <br>
 ####user-select
 **Usage:** `(user-select, none | text | toggle | element | elements | all | inherit)`.
 <br>**Support:** Chrome 1+, Firefox 1+, IE 10+, Safari 1+.
 
-    Ex. @include remixin(user-select, none);
+		Ex. @include remixin(user-select, none);
 
 <br>
 ##Browser Support
@@ -226,12 +282,12 @@ for IE set $ms to true.
 
 You can also target these when you are calling your remixin. Here is an example setting your font-face. Declare your variables:
 
-    $fontStyle: normal;
-    $fontWidth: 600;
+		$fontStyle: normal;
+		$fontWidth: 600;
 
 Decide on which vendor you don't need and then turn it off:
 
-    $ms: false
+		$ms: false
 
 <br>
 Then use them in your remixin:
@@ -240,7 +296,7 @@ Then use them in your remixin:
 
 Multiple browser vendors can be passed as arguments separated by commas:
 
-    Ex. @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
+		Ex. @include remixin(transform, rotate(200deg), $moz: false, $ms: false);
 
 This will not generate any -moz nor -ms properties.
 
@@ -264,6 +320,27 @@ CSS (SCSS).
 ##History
 
 
+**v0.1.29 - 2013-09-30**
+
+
+* Added appearence.
+
+***
+
+**v0.1.28 - 2013-08-14**
+
+
+* Added these properties:
+	* column-fill
+	* column-rule-color
+	* column-rule-style
+	* column-rule-width
+	* column-span
+	* column-width
+* Reordered unprefixed property (non-vendor) to be last.
+
+***
+
 **v0.1.27 - 2013-05-21**
 
 
@@ -275,8 +352,8 @@ CSS (SCSS).
 
 
 * Added these properties:
-  * backface-visibility
-  * transform-style
+	* backface-visibility
+	* transform-style
 
 ***
 
@@ -306,53 +383,53 @@ CSS (SCSS).
 
 
 * Added these properties:
-  * column-count
-  * column-gap
-  * column-rule
+	* column-count
+	* column-gap
+	* column-rule
 
 ***
 
 **v0.1.23 - 2012-08-16**
 
-  * Added perspective property. Note that it's same as transform(perspective).
-  * Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates the basic usage of remixin with box-shadow.
-  * Added border-image property.
+	* Added perspective property. Note that it's same as transform(perspective).
+	* Added [demo.html](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.html) and [demo.css](https://github.com/ialphan/remixin.scss/blob/master/demo/demo.scss) in [demo](https://github.com/ialphan/remixin.scss/tree/master/demo) directory. It demonstrates the basic usage of remixin with box-shadow.
+	* Added border-image property.
 
 ***
 
 **v0.1.22 - 2012-08-15**
 
-  * Added simple radial-gradient.
-  * Added supported properties sections to the README.md.
-  * Fixed a typo in advanced-usage.
+	* Added simple radial-gradient.
+	* Added supported properties sections to the README.md.
+	* Fixed a typo in advanced-usage.
 
 ***
 
 **v0.1.21 - 2012-06-19**
 
-  * Removed radial-gradient.
+	* Removed radial-gradient.
 
 ***
 
 **v0.1.2 - 2012-06-15**
 
-  * Added CSS3Pie for IE 8 fallbacks.
-  * Added radial-gradient (gradient is now linear-gradient).
+	* Added CSS3Pie for IE 8 fallbacks.
+	* Added radial-gradient (gradient is now linear-gradient).
 
 ***
 
 **v0.1.1 - 2012-06-14**
 
-  * Updated incorrect usage for ::selection property in the README.md.
-  * Added $fontPath variable to be used with font-face property.
-  * Added these properties:
-  	* animation
-  	* box-direction
-  	* hyphens
-  	* linear-gradient
-  	* transform
-  	* transition properties
-  *	Added remixin snippet as TextMate bundle.
+	* Updated incorrect usage for ::selection property in the README.md.
+	* Added $fontPath variable to be used with font-face property.
+	* Added these properties:
+		* animation
+		* box-direction
+		* hyphens
+		* linear-gradient
+		* transform
+		* transition properties
+	*	Added remixin snippet as TextMate bundle.
 
 ***
 
@@ -360,12 +437,12 @@ CSS (SCSS).
 
 
 * Added these properties:
-  * background-clip
-  * background-size
-  * border-radius
-  * box-shadow
-  * box-sizing
-  * font-face
-  * opacity
-  * ::selection
-  * user-select
+	* background-clip
+	* background-size
+	* border-radius
+	* box-shadow
+	* box-sizing
+	* font-face
+	* opacity
+	* ::selection
+	* user-select
