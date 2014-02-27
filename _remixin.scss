@@ -1,215 +1,229 @@
 $fontPath: nil !default;  //  font path for the font-face.
 
 @mixin remixin($property, $value, $moz: true, $ms: true, $webkit: true){
-  @if $property == 'animation' or
-      $property == 'appearence' or
-      $property == 'backface-visibility' or
-      $property == 'background-clip' or
-      $property == 'background-size' or
-      $property == 'border-image' or
-      $property == 'box-direction' or
-      $property == 'box-shadow' or
-      $property == 'box-sizing' or
-      $property == 'column-count' or
-      $property == 'column-fill' or
-      $property == 'column-gap' or
-      $property == 'column-rule' or
-      $property == 'column-rule-color' or
-      $property == 'column-rule-style' or
-      $property == 'column-rule-width' or
-      $property == 'column-span' or
-      $property == 'column-width' or
-      $property == 'filter' or
-      $property == 'font-face' or
-      $property == 'hyphens' or
-      $property == 'linear-gradient' or
-      $property == 'opacity' or
-      $property == 'perspective' or
-      $property == 'radial-gradient' or
-      $property == 'selection' or
-      $property == 'transform' or
-      $property == 'transform-origin' or
-      $property == 'transform-style' or
-      $property == 'transition' or
-      $property == 'user-select'{
+	@if $property == 'animation' or
+			$property == 'appearence' or
+			$property == 'backface-visibility' or
+			$property == 'background-clip' or
+			$property == 'background-size' or
+			$property == 'border-image' or
+			$property == 'box-direction' or
+			$property == 'box-shadow' or
+			$property == 'box-sizing' or
+			$property == 'column-count' or
+			$property == 'column-fill' or
+			$property == 'column-gap' or
+			$property == 'column-rule' or
+			$property == 'column-rule-color' or
+			$property == 'column-rule-style' or
+			$property == 'column-rule-width' or
+			$property == 'column-span' or
+			$property == 'column-width' or
+			$property == 'filter' or
+			$property == 'font-face' or
+			$property == 'hyphens' or
+			$property == 'linear-gradient' or
+			$property == 'opacity' or
+			$property == 'perspective' or
+			$property == 'radial-gradient' or
+			$property == 'selection' or
+			$property == 'transform' or
+			$property == 'transform-origin' or
+			$property == 'transform-style' or
+			$property == 'transition' or
+			$property == 'user-select'{
 
-    //  appearence, background-clip, background-size, border-image, box-shadow, box-sizing, filter, hyphens, perspective, transition
-    @if $property == 'appearence' or $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or  $property == 'box-shadow' or $property == 'box-sixing' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective' or $property == 'transition'{
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-      #{$property}: $value;
-    }
+		//  appearence, background-clip, background-size, border-image, box-shadow, box-sizing, filter, hyphens, perspective
+		@if $property == 'appearence' or $property == 'background-clip' or $property == 'background-size' or $property == 'border-image' or  $property == 'box-shadow' or $property == 'box-sixing' or $property == 'filter' or $property == 'hyphens' or $property == 'perspective'{
+			@if $moz{
+				-moz-#{$property}: $value;
+			}
+			@if $webkit{
+				-webkit-#{$property}: $value;
+			}
+			#{$property}: $value;
+		}
 
-    //  box-direction
-    @else if $property == 'box-direction'{
-      @if $moz{
-        display: -moz-box;
-        -moz-#{$property}: $value;
-      }
-      @if $webkit{
-        display: -webkit-box;
-        -webkit-#{$property}: $value;
-      }
-      display: box;
-      #{$property}: $value;
-    }
+		//  box-direction
+		@else if $property == 'box-direction'{
+			@if $moz{
+				display: -moz-box;
+				-moz-#{$property}: $value;
+			}
+			@if $webkit{
+				display: -webkit-box;
+				-webkit-#{$property}: $value;
+			}
+			display: box;
+			#{$property}: $value;
+		}
 
-    //  column-span
-    @else if $property == 'column-span'{
-      @if $ms{
-        -ms-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-      #{$property}: $value;
-    }
+		//  column-span
+		@else if $property == 'column-span'{
+			@if $ms{
+				-ms-#{$property}: $value;
+			}
+			@if $webkit{
+				-webkit-#{$property}: $value;
+			}
+			#{$property}: $value;
+		}
 
-    //  font-face
-    @else if $property == 'font-face'{
-      @if $fontPath != nil{
-        @if length($value) == 1{
-          @font-face{
-            font-family: $value;
-            font-style: normal;
-            font-weight: normal;
-            @if $ms{
-              src: url($fontPath + $value +'.eot');
-            }
-            src: local('☺'), url($fontPath + $value + '.ttf') format('truetype'), url($fontPath + $value + '.woff') format('woff'), url($fontPath + $value + '.svg') format('svg');
-          }
-        }
-        @if length($value) == 2{
-          @font-face{
-            font-family: nth($value, 1);
-            @if type-of(nth($value, 2)) == number{
-              font-weight: nth($value, 2);
-            }@else if type-of(nth($value, 2)) == string{
-              font-style: nth($value, 2);
-            }
-            @if $ms{
-              src: url(nth($fontPath + $value, 1) +'.eot');
-             }
-             src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
-          }
-        }
-        @if length($value) == 3{
-          @font-face{
-            font-family: nth($value, 1);
-            @if type-of(nth($value, 2)) == number{
-              font-weight: nth($value, 2);
-            }@else if type-of(nth($value, 2)) == string{
-              font-style: nth($value, 2);
-            }
-            @if type-of(nth($value, 3)) == number{
-              font-weight: nth($value, 3);
-            }@else if type-of(nth($value, 3)) == string{
-              font-style: nth($value, 3);
-            }
-            @if $ms{
-              src: url(nth($fontPath + $value, 1) +'.eot');
-            }
-            src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
-          }
-        }
-      }
-    }
+		//  font-face
+		@else if $property == 'font-face'{
+			@if $fontPath != nil{
+				@if length($value) == 1{
+					@font-face{
+						font-family: $value;
+						font-style: normal;
+						font-weight: normal;
+						@if $ms{
+							src: url($fontPath + $value +'.eot');
+						}
+						src: local('☺'), url($fontPath + $value + '.ttf') format('truetype'), url($fontPath + $value + '.woff') format('woff'), url($fontPath + $value + '.svg') format('svg');
+					}
+				}
+				@if length($value) == 2{
+					@font-face{
+						font-family: nth($value, 1);
+						@if type-of(nth($value, 2)) == number{
+							font-weight: nth($value, 2);
+						}@else if type-of(nth($value, 2)) == string{
+							font-style: nth($value, 2);
+						}
+						@if $ms{
+							src: url(nth($fontPath + $value, 1) +'.eot');
+						 }
+						 src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
+					}
+				}
+				@if length($value) == 3{
+					@font-face{
+						font-family: nth($value, 1);
+						@if type-of(nth($value, 2)) == number{
+							font-weight: nth($value, 2);
+						}@else if type-of(nth($value, 2)) == string{
+							font-style: nth($value, 2);
+						}
+						@if type-of(nth($value, 3)) == number{
+							font-weight: nth($value, 3);
+						}@else if type-of(nth($value, 3)) == string{
+							font-style: nth($value, 3);
+						}
+						@if $ms{
+							src: url(nth($fontPath + $value, 1) +'.eot');
+						}
+						src: local('☺'), url(nth($fontPath + $value, 1) + '.ttf') format('truetype'), url(nth($fontPath + $value, 1) + '.woff') format('woff'), url(nth($fontPath + $value, 1) + '.svg') format('svg');
+					}
+				}
+			}
+		}
 
-    //  linear-gradient
-    @else if $property == 'linear-gradient'{
-      @if $moz{
-          background-image: -moz-linear-gradient($value);
-      }
-      @if $ms{
-        background-image: -ms-linear-gradient($value);
-      }
-      @if $webkit{
-          background-image: -webkit-linear-gradient($value);
-      }
-    }
+		//  linear-gradient
+		@else if $property == 'linear-gradient'{
+			@if $moz{
+					background-image: -moz-linear-gradient($value);
+			}
+			@if $ms{
+				background-image: -ms-linear-gradient($value);
+			}
+			@if $webkit{
+					background-image: -webkit-linear-gradient($value);
+			}
+		}
 
-    //  opacity
-    @else if $property == 'opacity'{
-      @if $ms{
-        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
-        zoom:1;
-      }
-      #{$property}: $value;
-    }
+		//  opacity
+		@else if $property == 'opacity'{
+			@if $ms{
+				-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opactiy=#{$value * 100})";
+				zoom:1;
+			}
+			#{$property}: $value;
+		}
 
-    //  backface-visibility
-    @else if $property == 'backface-visibility'{
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $ms{
-        -ms-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-    }
+		//  backface-visibility
+		@else if $property == 'backface-visibility'{
+			@if $moz{
+				-moz-#{$property}: $value;
+			}
+			@if $ms{
+				-ms-#{$property}: $value;
+			}
+			@if $webkit{
+				-webkit-#{$property}: $value;
+			}
+		}
 
-    // radial-gradient
-    @else if $property == 'radial-gradient'{
-      @if $moz{
-        background-image: -moz-radial-gradient($value);
-      }
-      @if $ms{
-        background-image: radial-gradient($value);
-      }
-      @if $webkit{
-        background-image: -webkit-radial-gradient($value);
-      }
-    }
+		// radial-gradient
+		@else if $property == 'radial-gradient'{
+			@if $moz{
+				background-image: -moz-radial-gradient($value);
+			}
+			@if $ms{
+				background-image: radial-gradient($value);
+			}
+			@if $webkit{
+				background-image: -webkit-radial-gradient($value);
+			}
+		}
 
-    //  selection
-    @else if $property == 'selection'{
-      @if length($value) == 1{
-         @if $moz{
-          ::-moz-selection{
-            background: nth($value, 1);
-          }
-        }
-        ::selection{
-          background: nth($value, 1);
-        }
-      }@else if length($value) == 2{
-         @if $moz{
-          ::-moz-selection{
-            background: nth($value, 1);
-            color: nth($value, 2);
-           }
-         }
-         @if $webkit{
-          ::-moz-selection{
-            background: nth($value, 1);
-            color: nth($value, 2);
-          }
-        }
-        ::selection{
-          background: nth($value, 1);
-          color: nth($value, 2);
-        }
-      }
-    }
+		//  selection
+		@else if $property == 'selection'{
+			@if length($value) == 1{
+				 @if $moz{
+					::-moz-selection{
+						background: nth($value, 1);
+					}
+				}
+				::selection{
+					background: nth($value, 1);
+				}
+			}@else if length($value) == 2{
+				 @if $moz{
+					::-moz-selection{
+						background: nth($value, 1);
+						color: nth($value, 2);
+					 }
+				 }
+				 @if $webkit{
+					::-moz-selection{
+						background: nth($value, 1);
+						color: nth($value, 2);
+					}
+				}
+				::selection{
+					background: nth($value, 1);
+					color: nth($value, 2);
+				}
+			}
+		}
 
-    //  animation, column-count, column-fill, column-gap, column-rule, column-rule-color, column-rule-style, column-rule-width, column-width, transform, transform-origin, transform-style, user-select
-    @else if $property == 'animation' or $property == 'column-count' or $property == 'column-fill' or $property == 'column-gap' or $property == 'column-rule' or $property == 'column-rule-color' or $property == 'column-rule-style' or $property == 'column-rule-width' or $property == 'column-span' or $property == 'column-width' or $property == 'transform' or $property == 'transform-origin' or $property == 'transform-style' or $property == 'user-select'{
-      @if $moz{
-        -moz-#{$property}: $value;
-      }
-      @if $ms{
-        -ms-#{$property}: $value;
-      }
-      @if $webkit{
-        -webkit-#{$property}: $value;
-      }
-      #{$property}: $value;
-    }
-  }
+		//  animation, column-count, column-fill, column-gap, column-rule, column-rule-color, column-rule-style, column-rule-width, column-width, transform, transform-origin, transform-style, user-select
+		@else if $property == 'animation' or $property == 'column-count' or $property == 'column-fill' or $property == 'column-gap' or $property == 'column-rule' or $property == 'column-rule-color' or $property == 'column-rule-style' or $property == 'column-rule-width' or $property == 'column-span' or $property == 'column-width' or $property == 'transform' or $property == 'transform-origin' or $property == 'transform-style' or $property == 'user-select'{
+			@if $moz{
+				-moz-#{$property}: $value;
+			}
+			@if $ms{
+				-ms-#{$property}: $value;
+			}
+			@if $webkit{
+				-webkit-#{$property}: $value;
+			}
+			#{$property}: $value;
+		}
+
+		//  transition
+		@else if $property == 'transition'{
+			@if $moz{
+				-moz-#{$property}: -moz-#{$value};
+			}
+			@if $ms{
+				-ms-#{$property}: -ms-#{$value};
+			}
+			@if $webkit{
+				-webkit-#{$property}: -webkit-#{$value};
+			}
+			#{$property}: $value;
+		}
+	}
 }

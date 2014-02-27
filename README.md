@@ -252,7 +252,7 @@ Call remixin with the property and value(s). Browser vendor(s) are optional.
 **Usage:** `(transition, none | all | property time linear | ease | ease-in | ease-out | ease-in-out | cubic-bezier(n,n,n,n) time)`.
 <br>**Support:** Chrome 1+, Firefox 4+, IE 10+, Safari 3.2+.
 
-		Ex. @include remixin(transition, all 2s);
+		Ex. @include remixin(transition, transform 2s ease);
 
 <br>
 ####user-select
@@ -319,6 +319,13 @@ CSS (SCSS).
 <br>
 ##History
 
+
+**v0.1.30 - 2014-02-27**
+
+
+* Improved transition property.
+
+***
 
 **v0.1.29 - 2013-09-30**
 
